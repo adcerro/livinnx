@@ -4,19 +4,17 @@ package livinnx;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 
 
 /* @author natymartinez04*/
-public class Frame extends javax.swing.JFrame {
+public class LogIn extends javax.swing.JFrame {
 
     /**
      * Creates new form Inicio
      */
-    public Frame() {
+    public LogIn() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon("src/livinnx/logolivinnx.png").getImage());
     }
     
     /**
@@ -30,10 +28,12 @@ public class Frame extends javax.swing.JFrame {
 
         PInicio = new javax.swing.JPanel();
         labelcon = new javax.swing.JLabel();
-        labelName = new javax.swing.JLabel();
         labelSubName = new javax.swing.JLabel();
         panelTop = new javax.swing.JPanel();
-        buttonRegister = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
         buttonLogIn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -47,20 +47,13 @@ public class Frame extends javax.swing.JFrame {
 
         labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
         PInicio.add(labelcon);
-        labelcon.setBounds(10, 80, 213, 312);
-
-        labelName.setBackground(new java.awt.Color(255, 255, 255));
-        labelName.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
-        labelName.setForeground(new java.awt.Color(0, 0, 153));
-        labelName.setText("Livinnx");
-        PInicio.add(labelName);
-        labelName.setBounds(220, 130, 290, 83);
+        labelcon.setBounds(380, 130, 213, 312);
 
         labelSubName.setBackground(new java.awt.Color(255, 255, 255));
-        labelSubName.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
-        labelSubName.setText("RESERVAS");
+        labelSubName.setFont(new java.awt.Font("PT Serif Caption", 1, 48)); // NOI18N
+        labelSubName.setText("Iniciar Sesión");
         PInicio.add(labelSubName);
-        labelSubName.setBounds(220, 220, 350, 71);
+        labelSubName.setBounds(20, 70, 330, 71);
 
         panelTop.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -78,27 +71,43 @@ public class Frame extends javax.swing.JFrame {
         PInicio.add(panelTop);
         panelTop.setBounds(0, 0, 600, 50);
 
-        buttonRegister.setBackground(new java.awt.Color(255, 255, 255));
-        buttonRegister.setForeground(new java.awt.Color(255, 255, 255));
-        buttonRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_registro.png"))); // NOI18N
-        buttonRegister.setBorder(null);
-        buttonRegister.setBorderPainted(false);
-        buttonRegister.setContentAreaFilled(false);
-        buttonRegister.setFocusPainted(false);
-        buttonRegister.setMaximumSize(new java.awt.Dimension(270, 62));
-        buttonRegister.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonRegister.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel5.setText("Contraseña");
+        PInicio.add(jLabel5);
+        jLabel5.setBounds(20, 280, 140, 20);
+
+        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField5.setText("Ingrese su contraseña");
+        jTextField5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonRegisterActionPerformed(evt);
+                jTextField5ActionPerformed(evt);
             }
         });
-        PInicio.add(buttonRegister);
-        buttonRegister.setBounds(360, 310, 164, 60);
+        PInicio.add(jTextField5);
+        jTextField5.setBounds(20, 320, 230, 30);
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
+        jLabel6.setText("Usuario");
+        PInicio.add(jLabel6);
+        jLabel6.setBounds(20, 170, 100, 20);
+
+        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField6.setText("Ingrese nombre de usuario");
+        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField6ActionPerformed(evt);
+            }
+        });
+        PInicio.add(jTextField6);
+        jTextField6.setBounds(20, 210, 230, 30);
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_iniciar-sesion-2.png"))); // NOI18N
-        buttonLogIn.setBorder(null);
+        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_iniciar-sesion (1).png"))); // NOI18N
         buttonLogIn.setBorderPainted(false);
         buttonLogIn.setContentAreaFilled(false);
         buttonLogIn.setFocusPainted(false);
@@ -110,36 +119,24 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         PInicio.add(buttonLogIn);
-        buttonLogIn.setBounds(330, 380, 220, 60);
+        buttonLogIn.setBounds(20, 380, 150, 50);
 
         getContentPane().add(PInicio, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-        
-    }//GEN-LAST:event_buttonLogInActionPerformed
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
 
-    private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        Registro r = new Registro();
-        this.remove(PInicio);
-        this.add(r,BorderLayout.CENTER );
-        revalidate();
-        repaint();
-        r.getBackButton().addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                remove(r);
-                add(PInicio,BorderLayout.CENTER );
-                revalidate();
-                repaint();
-            }
-            
-        });
-        
-        
-    }//GEN-LAST:event_buttonRegisterActionPerformed
+    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField6ActionPerformed
+
+    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
+
+    }//GEN-LAST:event_buttonLogInActionPerformed
 
     /**
      * @param args the command line arguments
@@ -158,21 +155,23 @@ public class Frame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LogIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame().setVisible(true);
+                new LogIn().setVisible(true);
             }
         });
     }
@@ -180,8 +179,10 @@ public class Frame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PInicio;
     private javax.swing.JButton buttonLogIn;
-    private javax.swing.JButton buttonRegister;
-    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel labelSubName;
     private javax.swing.JLabel labelcon;
     private javax.swing.JPanel panelTop;

@@ -81,18 +81,257 @@ public class Reservas extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        jPanel3 = new javax.swing.JPanel();
+        jDayChooser2 = new com.toedter.calendar.JDayChooser();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        buttonLogIn5 = new javax.swing.JButton();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jDayChooser3 = new com.toedter.calendar.JDayChooser();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jTextField2 = new javax.swing.JTextField();
+        buttonLogIn4 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jDayChooser4 = new com.toedter.calendar.JDayChooser();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        buttonLogIn1 = new javax.swing.JButton();
+        jTextField3 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         messlabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        buttonLogIn6 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jTextField4 = new javax.swing.JTextField();
         jDayChooser1 = new com.toedter.calendar.JDayChooser();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel3.setLayout(null);
+
+        jDayChooser2.setForeground(new java.awt.Color(0, 183, 189));
+        jPanel3.add(jDayChooser2);
+        jDayChooser2.setBounds(40, 100, 360, 310);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
+
+        jLabel7.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
+        jLabel7.setText("Disponibilidad");
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 183, 189), 5));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel3.add(jPanel6);
+        jPanel6.setBounds(480, 30, 190, 60);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel3.add(jScrollPane1);
+        jScrollPane1.setBounds(430, 110, 280, 160);
+
+        buttonLogIn5.setBackground(new java.awt.Color(255, 255, 255));
+        buttonLogIn5.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
+        buttonLogIn5.setBorderPainted(false);
+        buttonLogIn5.setContentAreaFilled(false);
+        buttonLogIn5.setFocusPainted(false);
+        buttonLogIn5.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn5.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogIn5ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(buttonLogIn5);
+        buttonLogIn5.setBounds(520, 330, 120, 50);
+
+        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField1.setText("Ingrese la hora que desea reservar");
+        jPanel3.add(jTextField1);
+        jTextField1.setBounds(430, 280, 230, 40);
+
+        jLabel5.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 183, 189));
+        jLabel5.setText("  Escoga el día que desea reservar el gimnasio");
+        jLabel5.setOpaque(true);
+        jPanel3.add(jLabel5);
+        jLabel5.setBounds(40, 60, 360, 40);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1795.jpg"))); // NOI18N
+        jPanel3.add(jLabel6);
+        jLabel6.setBounds(0, 10, 740, 440);
+
+        jTabbedPane2.addTab("Gymnasio", jPanel3);
+
+        jPanel4.setLayout(null);
+
+        jDayChooser3.setForeground(new java.awt.Color(0, 183, 189));
+        jPanel4.add(jDayChooser3);
+        jDayChooser3.setBounds(40, 100, 360, 310);
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
+
+        jLabel10.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
+        jLabel10.setText("Disponibilidad");
+        jLabel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 183, 189), 5));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel4.add(jPanel7);
+        jPanel7.setBounds(480, 30, 190, 60);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        jPanel4.add(jScrollPane2);
+        jScrollPane2.setBounds(430, 110, 280, 160);
+
+        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField2.setText("Ingrese la hora que desea reservar");
+        jPanel4.add(jTextField2);
+        jTextField2.setBounds(430, 280, 230, 40);
+
+        buttonLogIn4.setBackground(new java.awt.Color(255, 255, 255));
+        buttonLogIn4.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
+        buttonLogIn4.setBorderPainted(false);
+        buttonLogIn4.setContentAreaFilled(false);
+        buttonLogIn4.setFocusPainted(false);
+        buttonLogIn4.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn4.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogIn4ActionPerformed(evt);
+            }
+        });
+        jPanel4.add(buttonLogIn4);
+        buttonLogIn4.setBounds(520, 330, 120, 50);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1793.jpg"))); // NOI18N
+        jPanel4.add(jLabel1);
+        jLabel1.setBounds(0, 0, 740, 460);
+
+        jLabel9.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 183, 189));
+        jLabel9.setText("  Escoga el día que desea reservar la zona de juegos");
+        jLabel9.setOpaque(true);
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(40, 60, 360, 40);
+        jPanel4.add(jLabel12);
+        jLabel12.setBounds(460, 180, 0, 0);
+
+        jTabbedPane2.addTab("Zona de Juegos", jPanel4);
+
+        jPanel5.setLayout(null);
+
+        jDayChooser4.setForeground(new java.awt.Color(0, 183, 189));
+        jPanel5.add(jDayChooser4);
+        jDayChooser4.setBounds(40, 100, 360, 310);
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
+
+        jLabel4.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
+        jLabel4.setText("Disponibilidad");
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 183, 189), 5));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+        );
+
+        jPanel5.add(jPanel8);
+        jPanel8.setBounds(480, 30, 190, 60);
+
+        buttonLogIn1.setBackground(new java.awt.Color(255, 255, 255));
+        buttonLogIn1.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogIn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
+        buttonLogIn1.setBorderPainted(false);
+        buttonLogIn1.setContentAreaFilled(false);
+        buttonLogIn1.setFocusPainted(false);
+        buttonLogIn1.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn1.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogIn1ActionPerformed(evt);
+            }
+        });
+        jPanel5.add(buttonLogIn1);
+        buttonLogIn1.setBounds(520, 330, 120, 50);
+
+        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField3.setText("Ingrese la hora que desea reservar");
+        jPanel5.add(jTextField3);
+        jTextField3.setBounds(430, 280, 230, 40);
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        jPanel5.add(jScrollPane3);
+        jScrollPane3.setBounds(430, 110, 280, 160);
+
+        jLabel13.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 183, 189));
+        jLabel13.setText("  Escoga el día que desea reservar la zona de estudio");
+        jLabel13.setOpaque(true);
+        jPanel5.add(jLabel13);
+        jLabel13.setBounds(40, 60, 360, 40);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1786.jpg"))); // NOI18N
+        jLabel11.setText("jLabel11");
+        jPanel5.add(jLabel11);
+        jLabel11.setBounds(0, 0, 740, 450);
+
+        jTabbedPane2.addTab("Zona de Estudio", jPanel5);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
@@ -105,16 +344,31 @@ public class Reservas extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 183, 189));
-        jLabel2.setText("Escoga el día que desea reservar la piscina");
+        jLabel2.setText("   Escoga el día que desea reservar la piscina");
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 60, 360, 40);
+
+        buttonLogIn6.setBackground(new java.awt.Color(255, 255, 255));
+        buttonLogIn6.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
+        buttonLogIn6.setBorderPainted(false);
+        buttonLogIn6.setContentAreaFilled(false);
+        buttonLogIn6.setFocusPainted(false);
+        buttonLogIn6.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn6.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogIn6ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(buttonLogIn6);
+        buttonLogIn6.setBounds(520, 330, 120, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
 
         jLabel3.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Disponibilidad");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 183, 189), 5));
 
@@ -130,70 +384,59 @@ public class Reservas extends javax.swing.JFrame {
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(380, 70, 190, 60);
+        jPanel2.setBounds(480, 30, 190, 60);
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane4.setViewportView(jTextArea4);
+
+        jPanel1.add(jScrollPane4);
+        jScrollPane4.setBounds(430, 110, 280, 160);
+
+        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
+        jTextField4.setText("Ingrese la hora que desea reservar");
+        jPanel1.add(jTextField4);
+        jTextField4.setBounds(430, 280, 230, 40);
 
         jDayChooser1.setForeground(new java.awt.Color(0, 183, 189));
         jPanel1.add(jDayChooser1);
         jDayChooser1.setBounds(10, 100, 360, 310);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/piscina.jpeg"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 30, 800, 400);
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1781.jpg"))); // NOI18N
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(0, -10, 740, 470);
 
         jTabbedPane2.addTab("Piscina", jPanel1);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab2", jPanel3);
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab3", jPanel4);
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 467, Short.MAX_VALUE)
-        );
-
-        jTabbedPane2.addTab("tab4", jPanel5);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2)
+            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonLogIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLogIn1ActionPerformed
+
+    private void buttonLogIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLogIn4ActionPerformed
+
+    private void buttonLogIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLogIn5ActionPerformed
+
+    private void buttonLogIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonLogIn6ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,16 +474,48 @@ public class Reservas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonLogIn1;
+    private javax.swing.JButton buttonLogIn4;
+    private javax.swing.JButton buttonLogIn5;
+    private javax.swing.JButton buttonLogIn6;
     private com.toedter.calendar.JDayChooser jDayChooser1;
+    private com.toedter.calendar.JDayChooser jDayChooser2;
+    private com.toedter.calendar.JDayChooser jDayChooser3;
+    private com.toedter.calendar.JDayChooser jDayChooser4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel messlabel;
     // End of variables declaration//GEN-END:variables
 }

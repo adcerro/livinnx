@@ -45,7 +45,6 @@ public class Registro extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
@@ -53,6 +52,7 @@ public class Registro extends javax.swing.JPanel {
         jTextField6 = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jTextField7 = new javax.swing.JTextField();
+        buttonLogIn = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -61,6 +61,7 @@ public class Registro extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(550, 750));
+        jPanel2.setLayout(null);
 
         panelTop.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -75,25 +76,37 @@ public class Registro extends javax.swing.JPanel {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
+        jPanel2.add(panelTop);
+        panelTop.setBounds(0, 0, 580, 50);
+
         labelTitle.setBackground(new java.awt.Color(255, 255, 255));
         labelTitle.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
-        labelTitle.setForeground(new java.awt.Color(0, 0, 0));
         labelTitle.setText("Registro");
+        jPanel2.add(labelTitle);
+        labelTitle.setBounds(20, 70, 260, 71);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(320, 180, 213, 312);
 
         jLabel5.setBackground(new java.awt.Color(255, 255, 255));
         jLabel5.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Nombre");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(40, 160, 100, 20);
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("Ingrese su nombre");
+        jPanel2.add(jTextField2);
+        jTextField2.setBounds(40, 190, 230, 30);
 
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
         jLabel6.setText("Apellido");
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(40, 230, 110, 32);
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("Ingrese su apellido");
@@ -102,11 +115,15 @@ public class Registro extends javax.swing.JPanel {
                 jTextField4ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField4);
+        jTextField4.setBounds(40, 270, 230, 30);
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Bloque");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(40, 310, 160, 32);
 
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("Ingrese el número del bloque");
@@ -115,11 +132,15 @@ public class Registro extends javax.swing.JPanel {
                 jTextField1ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField1);
+        jTextField1.setBounds(40, 350, 230, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel7.setForeground(new java.awt.Color(0, 0, 153));
         jLabel7.setText("Apartamento");
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(40, 390, 160, 32);
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setText("Ingrese el número del apartamento");
@@ -128,25 +149,26 @@ public class Registro extends javax.swing.JPanel {
                 jTextField3ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField3);
+        jTextField3.setBounds(40, 430, 230, 30);
 
-        jButton1.setText("Registrar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        backButton.setText("Regresar");
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_regresar (2).png"))); // NOI18N
+        backButton.setBorderPainted(false);
+        backButton.setContentAreaFilled(false);
         backButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(backButton);
+        backButton.setBounds(370, 700, 110, 40);
 
         jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel8.setForeground(new java.awt.Color(0, 0, 153));
         jLabel8.setText("Usuario");
+        jPanel2.add(jLabel8);
+        jLabel8.setBounds(40, 466, 160, 32);
 
         jTextField5.setForeground(new java.awt.Color(204, 204, 204));
         jTextField5.setText("Ingrese nombre de usuario");
@@ -155,11 +177,15 @@ public class Registro extends javax.swing.JPanel {
                 jTextField5ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField5);
+        jTextField5.setBounds(40, 504, 230, 30);
 
         jLabel9.setBackground(new java.awt.Color(255, 255, 255));
         jLabel9.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel9.setForeground(new java.awt.Color(0, 0, 102));
         jLabel9.setText("Contraseña");
+        jPanel2.add(jLabel9);
+        jLabel9.setBounds(40, 540, 160, 32);
 
         jTextField6.setForeground(new java.awt.Color(204, 204, 204));
         jTextField6.setText("Ingrese contraseña");
@@ -168,11 +194,15 @@ public class Registro extends javax.swing.JPanel {
                 jTextField6ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField6);
+        jTextField6.setBounds(40, 580, 230, 30);
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 255, 0));
+        jLabel10.setForeground(new java.awt.Color(0, 0, 102));
         jLabel10.setText("Numero ID.");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(40, 622, 160, 32);
 
         jTextField7.setForeground(new java.awt.Color(204, 204, 204));
         jTextField7.setText("Ingrese numero de identificación");
@@ -181,86 +211,24 @@ public class Registro extends javax.swing.JPanel {
                 jTextField7ActionPerformed(evt);
             }
         });
+        jPanel2.add(jTextField7);
+        jTextField7.setBounds(40, 660, 230, 30);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField3)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField4)
-                            .addComponent(jTextField2))
-                        .addGap(64, 64, 64)
-                        .addComponent(jLabel2)))
-                .addGap(0, 14, Short.MAX_VALUE))
-            .addComponent(panelTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(78, 78, 78))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(panelTop, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(labelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel6)
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel3)
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel7)
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel8)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9)
-                        .addGap(8, 8, 8)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(backButton))
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
+        buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
+        buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
+        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_registrar.png"))); // NOI18N
+        buttonLogIn.setBorderPainted(false);
+        buttonLogIn.setContentAreaFilled(false);
+        buttonLogIn.setFocusPainted(false);
+        buttonLogIn.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonLogIn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonLogInActionPerformed(evt);
+            }
+        });
+        jPanel2.add(buttonLogIn);
+        buttonLogIn.setBounds(90, 700, 110, 40);
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -279,14 +247,6 @@ public class Registro extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backButtonActionPerformed
-
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
@@ -299,10 +259,18 @@ public class Registro extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField7ActionPerformed
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backButtonActionPerformed
+
+    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
+
+    }//GEN-LAST:event_buttonLogInActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buttonLogIn;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
