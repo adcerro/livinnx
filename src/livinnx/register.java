@@ -180,7 +180,7 @@ public class register extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jPanel2);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(-3, 0, 570, 530);
+        jScrollPane1.setBounds(-3, 0, 570, 590);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
