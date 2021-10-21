@@ -118,7 +118,21 @@ public class Frame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-        
+        LogIn log = new LogIn();
+        this.remove(PInicio);
+        this.add(log, BorderLayout.CENTER );
+        revalidate();
+        repaint();
+        log.getBackButton().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                remove(log);
+                add(PInicio,BorderLayout.CENTER );
+                revalidate();
+                repaint();
+            }
+            
+        });
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
