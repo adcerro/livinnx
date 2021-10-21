@@ -108,12 +108,13 @@ public class Reservas extends javax.swing.JFrame {
         jLabel2.setText("Escoga el día que desea reservar la piscina");
         jLabel2.setOpaque(true);
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(20, 60, 340, 40);
+        jLabel2.setBounds(10, 60, 360, 40);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
 
         jLabel3.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Disponibilidad");
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 183, 189), 5));
 
@@ -131,7 +132,6 @@ public class Reservas extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(380, 70, 190, 60);
 
-        jDayChooser1.setBackground(new java.awt.Color(210, 12, 84));
         jDayChooser1.setForeground(new java.awt.Color(0, 183, 189));
         jPanel1.add(jDayChooser1);
         jDayChooser1.setBounds(10, 100, 360, 310);

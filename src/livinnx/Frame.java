@@ -56,6 +56,7 @@ public class Frame extends javax.swing.JFrame {
 
         labelSubName.setBackground(new java.awt.Color(255, 255, 255));
         labelSubName.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
+        labelSubName.setForeground(new java.awt.Color(0, 0, 0));
         labelSubName.setText("RESERVAS");
         PInicio.add(labelSubName);
         labelSubName.setBounds(220, 220, 327, 71);
@@ -91,7 +92,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         PInicio.add(buttonRegister);
-        buttonRegister.setBounds(376, 310, 164, 60);
+        buttonRegister.setBounds(360, 310, 164, 60);
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,7 +109,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         PInicio.add(buttonLogIn);
-        buttonLogIn.setBounds(350, 380, 220, 60);
+        buttonLogIn.setBounds(330, 380, 220, 60);
 
         getContentPane().add(PInicio, java.awt.BorderLayout.CENTER);
 
