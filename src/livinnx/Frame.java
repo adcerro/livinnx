@@ -14,6 +14,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     /**
@@ -37,6 +38,7 @@ public class Frame extends javax.swing.JFrame {
         setTitle("Livinnx");
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1080, 720));
         setMinimumSize(new java.awt.Dimension(590, 550));
+        setResizable(false);
 
         PInicio.setBackground(new java.awt.Color(255, 255, 255));
         PInicio.setLayout(null);
@@ -118,12 +120,12 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
-        register r = new register();
+        Registro r = new Registro();
         this.remove(PInicio);
         this.add(r,BorderLayout.CENTER );
         revalidate();
         repaint();
-        /*r.getBackButton().addActionListener(new ActionListener(){
+        r.getBackButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
                 remove(r);
@@ -132,7 +134,7 @@ public class Frame extends javax.swing.JFrame {
                 repaint();
             }
             
-        });*/
+        });
         
         
     }//GEN-LAST:event_buttonRegisterActionPerformed
