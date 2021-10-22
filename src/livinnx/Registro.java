@@ -35,14 +35,14 @@ public class Registro extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
         panelTop = new javax.swing.JPanel();
-        labelTitle = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        labelSubTitle = new javax.swing.JLabel();
+        labelIcon = new javax.swing.JLabel();
+        labelName = new javax.swing.JLabel();
+        textFieldName = new javax.swing.JTextField();
+        labelLastname = new javax.swing.JLabel();
+        textFieldLastname = new javax.swing.JTextField();
+        labelBlock = new javax.swing.JLabel();
+        textFieldBlock = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
@@ -79,61 +79,61 @@ public class Registro extends javax.swing.JPanel {
         jPanel2.add(panelTop);
         panelTop.setBounds(0, 0, 580, 50);
 
-        labelTitle.setBackground(new java.awt.Color(255, 255, 255));
-        labelTitle.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
-        labelTitle.setText("Registro");
-        jPanel2.add(labelTitle);
-        labelTitle.setBounds(20, 70, 260, 71);
+        labelSubTitle.setBackground(new java.awt.Color(255, 255, 255));
+        labelSubTitle.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
+        labelSubTitle.setText("Registro");
+        jPanel2.add(labelSubTitle);
+        labelSubTitle.setBounds(20, 70, 260, 71);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
-        jPanel2.add(jLabel2);
-        jLabel2.setBounds(320, 180, 213, 312);
+        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
+        jPanel2.add(labelIcon);
+        labelIcon.setBounds(320, 180, 213, 312);
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel5.setText("Nombre");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(40, 160, 100, 20);
+        labelName.setBackground(new java.awt.Color(255, 255, 255));
+        labelName.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelName.setForeground(new java.awt.Color(0, 0, 153));
+        labelName.setText("Nombre");
+        jPanel2.add(labelName);
+        labelName.setBounds(40, 160, 100, 20);
 
-        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Ingrese su nombre");
-        jPanel2.add(jTextField2);
-        jTextField2.setBounds(40, 190, 230, 30);
+        textFieldName.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldName.setText("Ingrese su nombre");
+        jPanel2.add(textFieldName);
+        textFieldName.setBounds(40, 190, 230, 30);
 
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel6.setText("Apellido");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(40, 230, 110, 32);
+        labelLastname.setBackground(new java.awt.Color(255, 255, 255));
+        labelLastname.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelLastname.setForeground(new java.awt.Color(0, 0, 153));
+        labelLastname.setText("Apellido");
+        jPanel2.add(labelLastname);
+        labelLastname.setBounds(40, 230, 110, 32);
 
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField4.setText("Ingrese su apellido");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        textFieldLastname.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldLastname.setText("Ingrese su apellido");
+        textFieldLastname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                textFieldLastnameActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4);
-        jTextField4.setBounds(40, 270, 230, 30);
+        jPanel2.add(textFieldLastname);
+        textFieldLastname.setBounds(40, 270, 230, 30);
 
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel3.setText("Bloque");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(40, 310, 160, 32);
+        labelBlock.setBackground(new java.awt.Color(255, 255, 255));
+        labelBlock.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelBlock.setForeground(new java.awt.Color(0, 0, 153));
+        labelBlock.setText("Bloque");
+        jPanel2.add(labelBlock);
+        labelBlock.setBounds(40, 310, 160, 32);
 
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Ingrese el número del bloque");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        textFieldBlock.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldBlock.setText("Ingrese el número del bloque");
+        textFieldBlock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                textFieldBlockActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(40, 350, 230, 30);
+        jPanel2.add(textFieldBlock);
+        textFieldBlock.setBounds(40, 350, 230, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -235,13 +235,13 @@ public class Registro extends javax.swing.JPanel {
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void textFieldLastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldLastnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_textFieldLastnameActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void textFieldBlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldBlockActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_textFieldBlockActionPerformed
 
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
@@ -272,23 +272,23 @@ public class Registro extends javax.swing.JPanel {
     private javax.swing.JButton backButton;
     private javax.swing.JButton buttonLogIn;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
-    private javax.swing.JLabel labelTitle;
+    private javax.swing.JLabel labelBlock;
+    private javax.swing.JLabel labelIcon;
+    private javax.swing.JLabel labelLastname;
+    private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelSubTitle;
     private javax.swing.JPanel panelTop;
+    private javax.swing.JTextField textFieldBlock;
+    private javax.swing.JTextField textFieldLastname;
+    private javax.swing.JTextField textFieldName;
     // End of variables declaration//GEN-END:variables
 }

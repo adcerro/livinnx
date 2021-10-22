@@ -33,10 +33,10 @@ public class LogIn extends javax.swing.JPanel {
         labelcon = new javax.swing.JLabel();
         labelSubName = new javax.swing.JLabel();
         panelTop = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        passwordLabel = new javax.swing.JLabel();
+        passwordTextField = new javax.swing.JTextField();
+        userLabel = new javax.swing.JLabel();
+        userTextField = new javax.swing.JTextField();
         buttonLogIn = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
 
@@ -69,39 +69,49 @@ public class LogIn extends javax.swing.JPanel {
         PInicio.add(panelTop);
         panelTop.setBounds(0, 0, 600, 50);
 
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel5.setText("Contraseña");
-        PInicio.add(jLabel5);
-        jLabel5.setBounds(20, 280, 140, 20);
+        passwordLabel.setBackground(new java.awt.Color(255, 255, 255));
+        passwordLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        passwordLabel.setForeground(new java.awt.Color(0, 0, 153));
+        passwordLabel.setText("Contraseña");
+        PInicio.add(passwordLabel);
+        passwordLabel.setBounds(20, 280, 140, 20);
 
-        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField5.setText("Ingrese su contraseña");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+        passwordTextField.setForeground(new java.awt.Color(204, 204, 204));
+        passwordTextField.setText("Ingrese su contraseña");
+        passwordTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                passwordTextFieldMouseClicked(evt);
             }
         });
-        PInicio.add(jTextField5);
-        jTextField5.setBounds(20, 320, 230, 30);
-
-        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel6.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel6.setText("Usuario");
-        PInicio.add(jLabel6);
-        jLabel6.setBounds(20, 170, 100, 20);
-
-        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField6.setText("Ingrese nombre de usuario");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                passwordTextFieldActionPerformed(evt);
             }
         });
-        PInicio.add(jTextField6);
-        jTextField6.setBounds(20, 210, 230, 30);
+        PInicio.add(passwordTextField);
+        passwordTextField.setBounds(20, 320, 230, 30);
+
+        userLabel.setBackground(new java.awt.Color(255, 255, 255));
+        userLabel.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        userLabel.setForeground(new java.awt.Color(0, 0, 153));
+        userLabel.setText("Usuario");
+        PInicio.add(userLabel);
+        userLabel.setBounds(20, 170, 100, 20);
+
+        userTextField.setForeground(new java.awt.Color(204, 204, 204));
+        userTextField.setText("Ingrese nombre de usuario");
+        userTextField.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userTextFieldMouseClicked(evt);
+            }
+        });
+        userTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userTextFieldActionPerformed(evt);
+            }
+        });
+        PInicio.add(userTextField);
+        userTextField.setBounds(20, 210, 230, 30);
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,13 +159,13 @@ public class LogIn extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_passwordTextFieldActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void userTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_userTextFieldActionPerformed
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
 
@@ -165,18 +175,30 @@ public class LogIn extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
 
+    private void userTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextFieldMouseClicked
+        if(userTextField.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
+            userTextField.setText("");
+        }
+    }//GEN-LAST:event_userTextFieldMouseClicked
+
+    private void passwordTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_passwordTextFieldMouseClicked
+        if(passwordTextField.getText().equalsIgnoreCase("Ingrese su contraseña")){
+            passwordTextField.setText("");
+        }
+    }//GEN-LAST:event_passwordTextFieldMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PInicio;
     private javax.swing.JButton backButton;
     private javax.swing.JButton buttonLogIn;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     private javax.swing.JLabel labelSubName;
     private javax.swing.JLabel labelcon;
     private javax.swing.JPanel panelTop;
+    private javax.swing.JLabel passwordLabel;
+    private javax.swing.JTextField passwordTextField;
+    private javax.swing.JLabel userLabel;
+    private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
 
     public JButton getBackButton() {
