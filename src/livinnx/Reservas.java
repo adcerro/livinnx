@@ -81,7 +81,7 @@ public class Reservas extends javax.swing.JFrame {
     private void initComponents() {
 
         jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
+        gymPanel = new javax.swing.JPanel();
         jDayChooser2 = new com.toedter.calendar.JDayChooser();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -91,7 +91,7 @@ public class Reservas extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
+        gamePanel = new javax.swing.JPanel();
         jDayChooser3 = new com.toedter.calendar.JDayChooser();
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -102,7 +102,7 @@ public class Reservas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
+        studyPanel = new javax.swing.JPanel();
         jDayChooser4 = new com.toedter.calendar.JDayChooser();
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -112,7 +112,7 @@ public class Reservas extends javax.swing.JFrame {
         jTextArea3 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        poolPanel = new javax.swing.JPanel();
         messlabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         buttonLogIn6 = new javax.swing.JButton();
@@ -126,10 +126,10 @@ public class Reservas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setLayout(null);
+        gymPanel.setLayout(null);
 
         jDayChooser2.setForeground(new java.awt.Color(0, 183, 189));
-        jPanel3.add(jDayChooser2);
+        gymPanel.add(jDayChooser2);
         jDayChooser2.setBounds(40, 100, 360, 310);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
@@ -150,14 +150,14 @@ public class Reservas extends javax.swing.JFrame {
             .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel3.add(jPanel6);
+        gymPanel.add(jPanel6);
         jPanel6.setBounds(480, 30, 190, 60);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jPanel3.add(jScrollPane1);
+        gymPanel.add(jScrollPane1);
         jScrollPane1.setBounds(430, 110, 280, 160);
 
         buttonLogIn5.setBackground(new java.awt.Color(255, 255, 255));
@@ -173,31 +173,31 @@ public class Reservas extends javax.swing.JFrame {
                 buttonLogIn5ActionPerformed(evt);
             }
         });
-        jPanel3.add(buttonLogIn5);
+        gymPanel.add(buttonLogIn5);
         buttonLogIn5.setBounds(520, 330, 120, 50);
 
         jTextField1.setForeground(new java.awt.Color(204, 204, 204));
         jTextField1.setText("Ingrese la hora que desea reservar");
-        jPanel3.add(jTextField1);
+        gymPanel.add(jTextField1);
         jTextField1.setBounds(430, 280, 230, 40);
 
         jLabel5.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 183, 189));
         jLabel5.setText("  Escoga el día que desea reservar el gimnasio");
         jLabel5.setOpaque(true);
-        jPanel3.add(jLabel5);
+        gymPanel.add(jLabel5);
         jLabel5.setBounds(40, 60, 360, 40);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1795.jpg"))); // NOI18N
-        jPanel3.add(jLabel6);
+        gymPanel.add(jLabel6);
         jLabel6.setBounds(0, 10, 740, 440);
 
-        jTabbedPane2.addTab("Gymnasio", jPanel3);
+        jTabbedPane2.addTab("Gymnasio", gymPanel);
 
-        jPanel4.setLayout(null);
+        gamePanel.setLayout(null);
 
         jDayChooser3.setForeground(new java.awt.Color(0, 183, 189));
-        jPanel4.add(jDayChooser3);
+        gamePanel.add(jDayChooser3);
         jDayChooser3.setBounds(40, 100, 360, 310);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -218,19 +218,19 @@ public class Reservas extends javax.swing.JFrame {
             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel4.add(jPanel7);
+        gamePanel.add(jPanel7);
         jPanel7.setBounds(480, 30, 190, 60);
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        jPanel4.add(jScrollPane2);
+        gamePanel.add(jScrollPane2);
         jScrollPane2.setBounds(430, 110, 280, 160);
 
         jTextField2.setForeground(new java.awt.Color(204, 204, 204));
         jTextField2.setText("Ingrese la hora que desea reservar");
-        jPanel4.add(jTextField2);
+        gamePanel.add(jTextField2);
         jTextField2.setBounds(430, 280, 230, 40);
 
         buttonLogIn4.setBackground(new java.awt.Color(255, 255, 255));
@@ -246,28 +246,28 @@ public class Reservas extends javax.swing.JFrame {
                 buttonLogIn4ActionPerformed(evt);
             }
         });
-        jPanel4.add(buttonLogIn4);
+        gamePanel.add(buttonLogIn4);
         buttonLogIn4.setBounds(520, 330, 120, 50);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1793.jpg"))); // NOI18N
-        jPanel4.add(jLabel1);
+        gamePanel.add(jLabel1);
         jLabel1.setBounds(0, 0, 740, 460);
 
         jLabel9.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 183, 189));
         jLabel9.setText("  Escoga el día que desea reservar la zona de juegos");
         jLabel9.setOpaque(true);
-        jPanel4.add(jLabel9);
+        gamePanel.add(jLabel9);
         jLabel9.setBounds(40, 60, 360, 40);
-        jPanel4.add(jLabel12);
+        gamePanel.add(jLabel12);
         jLabel12.setBounds(460, 180, 0, 0);
 
-        jTabbedPane2.addTab("Zona de Juegos", jPanel4);
+        jTabbedPane2.addTab("Zona de Juegos", gamePanel);
 
-        jPanel5.setLayout(null);
+        studyPanel.setLayout(null);
 
         jDayChooser4.setForeground(new java.awt.Color(0, 183, 189));
-        jPanel5.add(jDayChooser4);
+        studyPanel.add(jDayChooser4);
         jDayChooser4.setBounds(40, 100, 360, 310);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
@@ -288,7 +288,7 @@ public class Reservas extends javax.swing.JFrame {
             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel5.add(jPanel8);
+        studyPanel.add(jPanel8);
         jPanel8.setBounds(480, 30, 190, 60);
 
         buttonLogIn1.setBackground(new java.awt.Color(255, 255, 255));
@@ -304,49 +304,49 @@ public class Reservas extends javax.swing.JFrame {
                 buttonLogIn1ActionPerformed(evt);
             }
         });
-        jPanel5.add(buttonLogIn1);
+        studyPanel.add(buttonLogIn1);
         buttonLogIn1.setBounds(520, 330, 120, 50);
 
         jTextField3.setForeground(new java.awt.Color(204, 204, 204));
         jTextField3.setText("Ingrese la hora que desea reservar");
-        jPanel5.add(jTextField3);
+        studyPanel.add(jTextField3);
         jTextField3.setBounds(430, 280, 230, 40);
 
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        jPanel5.add(jScrollPane3);
+        studyPanel.add(jScrollPane3);
         jScrollPane3.setBounds(430, 110, 280, 160);
 
         jLabel13.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 183, 189));
         jLabel13.setText("  Escoga el día que desea reservar la zona de estudio");
         jLabel13.setOpaque(true);
-        jPanel5.add(jLabel13);
+        studyPanel.add(jLabel13);
         jLabel13.setBounds(40, 60, 360, 40);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1786.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
-        jPanel5.add(jLabel11);
+        studyPanel.add(jLabel11);
         jLabel11.setBounds(0, 0, 740, 450);
 
-        jTabbedPane2.addTab("Zona de Estudio", jPanel5);
+        jTabbedPane2.addTab("Zona de Estudio", studyPanel);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
+        poolPanel.setBackground(new java.awt.Color(255, 255, 255));
+        poolPanel.setLayout(null);
 
         messlabel.setBackground(new java.awt.Color(255, 255, 255));
         messlabel.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         messlabel.setForeground(new java.awt.Color(51, 51, 255));
-        jPanel1.add(messlabel);
+        poolPanel.add(messlabel);
         messlabel.setBounds(390, 180, 110, 50);
 
         jLabel2.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 183, 189));
         jLabel2.setText("   Escoga el día que desea reservar la piscina");
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2);
+        poolPanel.add(jLabel2);
         jLabel2.setBounds(10, 60, 360, 40);
 
         buttonLogIn6.setBackground(new java.awt.Color(255, 255, 255));
@@ -362,7 +362,7 @@ public class Reservas extends javax.swing.JFrame {
                 buttonLogIn6ActionPerformed(evt);
             }
         });
-        jPanel1.add(buttonLogIn6);
+        poolPanel.add(buttonLogIn6);
         buttonLogIn6.setBounds(520, 330, 120, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -383,30 +383,30 @@ public class Reservas extends javax.swing.JFrame {
             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2);
+        poolPanel.add(jPanel2);
         jPanel2.setBounds(480, 30, 190, 60);
 
         jTextArea4.setColumns(20);
         jTextArea4.setRows(5);
         jScrollPane4.setViewportView(jTextArea4);
 
-        jPanel1.add(jScrollPane4);
+        poolPanel.add(jScrollPane4);
         jScrollPane4.setBounds(430, 110, 280, 160);
 
         jTextField4.setForeground(new java.awt.Color(204, 204, 204));
         jTextField4.setText("Ingrese la hora que desea reservar");
-        jPanel1.add(jTextField4);
+        poolPanel.add(jTextField4);
         jTextField4.setBounds(430, 280, 230, 40);
 
         jDayChooser1.setForeground(new java.awt.Color(0, 183, 189));
-        jPanel1.add(jDayChooser1);
+        poolPanel.add(jDayChooser1);
         jDayChooser1.setBounds(10, 100, 360, 310);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1781.jpg"))); // NOI18N
-        jPanel1.add(jLabel8);
+        poolPanel.add(jLabel8);
         jLabel8.setBounds(0, -10, 740, 470);
 
-        jTabbedPane2.addTab("Piscina", jPanel1);
+        jTabbedPane2.addTab("Piscina", poolPanel);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -478,6 +478,8 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JButton buttonLogIn4;
     private javax.swing.JButton buttonLogIn5;
     private javax.swing.JButton buttonLogIn6;
+    private javax.swing.JPanel gamePanel;
+    private javax.swing.JPanel gymPanel;
     private com.toedter.calendar.JDayChooser jDayChooser1;
     private com.toedter.calendar.JDayChooser jDayChooser2;
     private com.toedter.calendar.JDayChooser jDayChooser3;
@@ -495,11 +497,7 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
@@ -517,5 +515,7 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel messlabel;
+    private javax.swing.JPanel poolPanel;
+    private javax.swing.JPanel studyPanel;
     // End of variables declaration//GEN-END:variables
 }

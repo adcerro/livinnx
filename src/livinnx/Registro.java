@@ -32,36 +32,36 @@ public class Registro extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
+        scrollPane = new javax.swing.JScrollPane();
+        innerPanel = new javax.swing.JPanel();
         panelTop = new javax.swing.JPanel();
         labelSubTitle = new javax.swing.JLabel();
         labelIcon = new javax.swing.JLabel();
         labelName = new javax.swing.JLabel();
         textFieldName = new javax.swing.JTextField();
-        labelLastname = new javax.swing.JLabel();
-        textFieldLastname = new javax.swing.JTextField();
+        labelLN = new javax.swing.JLabel();
+        textFieldLN = new javax.swing.JTextField();
         labelBlock = new javax.swing.JLabel();
         textFieldBlock = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        labelApt = new javax.swing.JLabel();
+        textFieldApt = new javax.swing.JTextField();
         backButton = new javax.swing.JButton();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        labelUser = new javax.swing.JLabel();
+        textFieldUser = new javax.swing.JTextField();
+        labelPassw = new javax.swing.JLabel();
+        textFieldPassw = new javax.swing.JTextField();
+        labelID = new javax.swing.JLabel();
+        textFieldID = new javax.swing.JTextField();
         buttonLogIn = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
-        jScrollPane1.setAutoscrolls(true);
-        jScrollPane1.setMaximumSize(new java.awt.Dimension(590, 490));
+        scrollPane.setAutoscrolls(true);
+        scrollPane.setMaximumSize(new java.awt.Dimension(590, 490));
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setPreferredSize(new java.awt.Dimension(550, 750));
-        jPanel2.setLayout(null);
+        innerPanel.setBackground(new java.awt.Color(255, 255, 255));
+        innerPanel.setPreferredSize(new java.awt.Dimension(550, 750));
+        innerPanel.setLayout(null);
 
         panelTop.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -76,81 +76,101 @@ public class Registro extends javax.swing.JPanel {
             .addGap(0, 50, Short.MAX_VALUE)
         );
 
-        jPanel2.add(panelTop);
+        innerPanel.add(panelTop);
         panelTop.setBounds(0, 0, 580, 50);
 
         labelSubTitle.setBackground(new java.awt.Color(255, 255, 255));
         labelSubTitle.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
         labelSubTitle.setText("Registro");
-        jPanel2.add(labelSubTitle);
+        innerPanel.add(labelSubTitle);
         labelSubTitle.setBounds(20, 70, 260, 71);
 
         labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
-        jPanel2.add(labelIcon);
+        innerPanel.add(labelIcon);
         labelIcon.setBounds(320, 180, 213, 312);
 
         labelName.setBackground(new java.awt.Color(255, 255, 255));
         labelName.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         labelName.setForeground(new java.awt.Color(0, 0, 153));
         labelName.setText("Nombre");
-        jPanel2.add(labelName);
+        innerPanel.add(labelName);
         labelName.setBounds(40, 160, 100, 20);
 
         textFieldName.setForeground(new java.awt.Color(204, 204, 204));
         textFieldName.setText("Ingrese su nombre");
-        jPanel2.add(textFieldName);
-        textFieldName.setBounds(40, 190, 230, 30);
-
-        labelLastname.setBackground(new java.awt.Color(255, 255, 255));
-        labelLastname.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        labelLastname.setForeground(new java.awt.Color(0, 0, 153));
-        labelLastname.setText("Apellido");
-        jPanel2.add(labelLastname);
-        labelLastname.setBounds(40, 230, 110, 32);
-
-        textFieldLastname.setForeground(new java.awt.Color(204, 204, 204));
-        textFieldLastname.setText("Ingrese su apellido");
-        textFieldLastname.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldLastnameActionPerformed(evt);
+        textFieldName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldNameMousePressed(evt);
             }
         });
-        jPanel2.add(textFieldLastname);
-        textFieldLastname.setBounds(40, 270, 230, 30);
+        innerPanel.add(textFieldName);
+        textFieldName.setBounds(40, 190, 230, 30);
+
+        labelLN.setBackground(new java.awt.Color(255, 255, 255));
+        labelLN.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelLN.setForeground(new java.awt.Color(0, 0, 153));
+        labelLN.setText("Apellido");
+        innerPanel.add(labelLN);
+        labelLN.setBounds(40, 230, 110, 32);
+
+        textFieldLN.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldLN.setText("Ingrese su apellido");
+        textFieldLN.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                textFieldLNMousePressed(evt);
+            }
+        });
+        textFieldLN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldLNActionPerformed(evt);
+            }
+        });
+        innerPanel.add(textFieldLN);
+        textFieldLN.setBounds(40, 270, 230, 30);
 
         labelBlock.setBackground(new java.awt.Color(255, 255, 255));
         labelBlock.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
         labelBlock.setForeground(new java.awt.Color(0, 0, 153));
         labelBlock.setText("Bloque");
-        jPanel2.add(labelBlock);
+        innerPanel.add(labelBlock);
         labelBlock.setBounds(40, 310, 160, 32);
 
         textFieldBlock.setForeground(new java.awt.Color(204, 204, 204));
         textFieldBlock.setText("Ingrese el número del bloque");
+        textFieldBlock.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldBlockMouseClicked(evt);
+            }
+        });
         textFieldBlock.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 textFieldBlockActionPerformed(evt);
             }
         });
-        jPanel2.add(textFieldBlock);
+        innerPanel.add(textFieldBlock);
         textFieldBlock.setBounds(40, 350, 230, 30);
 
-        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel7.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel7.setText("Apartamento");
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(40, 390, 160, 32);
+        labelApt.setBackground(new java.awt.Color(255, 255, 255));
+        labelApt.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelApt.setForeground(new java.awt.Color(0, 0, 153));
+        labelApt.setText("Apartamento");
+        innerPanel.add(labelApt);
+        labelApt.setBounds(40, 390, 160, 32);
 
-        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Ingrese el número del apartamento");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+        textFieldApt.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldApt.setText("Ingrese el número del apartamento");
+        textFieldApt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldAptMouseClicked(evt);
             }
         });
-        jPanel2.add(jTextField3);
-        jTextField3.setBounds(40, 430, 230, 30);
+        textFieldApt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldAptActionPerformed(evt);
+            }
+        });
+        innerPanel.add(textFieldApt);
+        textFieldApt.setBounds(40, 430, 230, 30);
 
         backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_regresar (2).png"))); // NOI18N
         backButton.setBorderPainted(false);
@@ -160,59 +180,74 @@ public class Registro extends javax.swing.JPanel {
                 backButtonActionPerformed(evt);
             }
         });
-        jPanel2.add(backButton);
+        innerPanel.add(backButton);
         backButton.setBounds(370, 700, 110, 40);
 
-        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel8.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(0, 0, 153));
-        jLabel8.setText("Usuario");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(40, 466, 160, 32);
+        labelUser.setBackground(new java.awt.Color(255, 255, 255));
+        labelUser.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelUser.setForeground(new java.awt.Color(0, 0, 153));
+        labelUser.setText("Usuario");
+        innerPanel.add(labelUser);
+        labelUser.setBounds(40, 466, 160, 32);
 
-        jTextField5.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField5.setText("Ingrese nombre de usuario");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+        textFieldUser.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldUser.setText("Ingrese nombre de usuario");
+        textFieldUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldUserMouseClicked(evt);
             }
         });
-        jPanel2.add(jTextField5);
-        jTextField5.setBounds(40, 504, 230, 30);
-
-        jLabel9.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel9.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel9.setText("Contraseña");
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(40, 540, 160, 32);
-
-        jTextField6.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField6.setText("Ingrese contraseña");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        textFieldUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                textFieldUserActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6);
-        jTextField6.setBounds(40, 580, 230, 30);
+        innerPanel.add(textFieldUser);
+        textFieldUser.setBounds(40, 504, 230, 30);
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 102));
-        jLabel10.setText("Numero ID.");
-        jPanel2.add(jLabel10);
-        jLabel10.setBounds(40, 622, 160, 32);
+        labelPassw.setBackground(new java.awt.Color(255, 255, 255));
+        labelPassw.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelPassw.setForeground(new java.awt.Color(0, 0, 102));
+        labelPassw.setText("Contraseña");
+        innerPanel.add(labelPassw);
+        labelPassw.setBounds(40, 540, 160, 32);
 
-        jTextField7.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField7.setText("Ingrese numero de identificación");
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+        textFieldPassw.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldPassw.setText("Ingrese contraseña");
+        textFieldPassw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldPasswMouseClicked(evt);
             }
         });
-        jPanel2.add(jTextField7);
-        jTextField7.setBounds(40, 660, 230, 30);
+        textFieldPassw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldPasswActionPerformed(evt);
+            }
+        });
+        innerPanel.add(textFieldPassw);
+        textFieldPassw.setBounds(40, 580, 230, 30);
+
+        labelID.setBackground(new java.awt.Color(255, 255, 255));
+        labelID.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
+        labelID.setForeground(new java.awt.Color(0, 0, 102));
+        labelID.setText("Numero ID.");
+        innerPanel.add(labelID);
+        labelID.setBounds(40, 622, 160, 32);
+
+        textFieldID.setForeground(new java.awt.Color(204, 204, 204));
+        textFieldID.setText("Ingrese numero de identificación");
+        textFieldID.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldIDMouseClicked(evt);
+            }
+        });
+        textFieldID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldIDActionPerformed(evt);
+            }
+        });
+        innerPanel.add(textFieldID);
+        textFieldID.setBounds(40, 660, 230, 30);
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
@@ -227,37 +262,37 @@ public class Registro extends javax.swing.JPanel {
                 buttonLogInActionPerformed(evt);
             }
         });
-        jPanel2.add(buttonLogIn);
+        innerPanel.add(buttonLogIn);
         buttonLogIn.setBounds(90, 700, 110, 40);
 
-        jScrollPane1.setViewportView(jPanel2);
+        scrollPane.setViewportView(innerPanel);
 
-        add(jScrollPane1, java.awt.BorderLayout.CENTER);
+        add(scrollPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldLastnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldLastnameActionPerformed
+    private void textFieldLNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldLNActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldLastnameActionPerformed
+    }//GEN-LAST:event_textFieldLNActionPerformed
 
     private void textFieldBlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldBlockActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textFieldBlockActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void textFieldAptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldAptActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_textFieldAptActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void textFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_textFieldUserActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void textFieldPasswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPasswActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_textFieldPasswActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_textFieldIDActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
@@ -267,28 +302,70 @@ public class Registro extends javax.swing.JPanel {
 
     }//GEN-LAST:event_buttonLogInActionPerformed
 
+    private void textFieldNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNameMousePressed
+       if(textFieldName.getText().equalsIgnoreCase("Ingrese su nombre")){
+            textFieldName.setText("");
+        }
+    }//GEN-LAST:event_textFieldNameMousePressed
+
+    private void textFieldLNMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldLNMousePressed
+       if(textFieldLN.getText().equalsIgnoreCase("Ingrese su apellido")){
+            textFieldLN.setText("");
+        }
+    }//GEN-LAST:event_textFieldLNMousePressed
+
+    private void textFieldBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldBlockMouseClicked
+        if(textFieldBlock.getText().equalsIgnoreCase("Ingrese el número del bloque")){
+            textFieldBlock.setText("");
+        }
+    }//GEN-LAST:event_textFieldBlockMouseClicked
+
+    private void textFieldAptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldAptMouseClicked
+       if(textFieldApt.getText().equalsIgnoreCase("Ingrese el número del apartamento")){
+            textFieldApt.setText("");
+        }
+    }//GEN-LAST:event_textFieldAptMouseClicked
+
+    private void textFieldUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldUserMouseClicked
+        if(textFieldUser.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
+            textFieldUser.setText("");
+        }
+    }//GEN-LAST:event_textFieldUserMouseClicked
+
+    private void textFieldPasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldPasswMouseClicked
+        if(textFieldPassw.getText().equalsIgnoreCase("Ingrese contraseña")){
+            textFieldPassw.setText("");
+        }
+    }//GEN-LAST:event_textFieldPasswMouseClicked
+
+    private void textFieldIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldIDMouseClicked
+       if(textFieldID.getText().equalsIgnoreCase("Ingrese numero de identificación")){
+            textFieldID.setText("");
+        }
+    }//GEN-LAST:event_textFieldIDMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backButton;
     private javax.swing.JButton buttonLogIn;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JPanel innerPanel;
+    private javax.swing.JLabel labelApt;
     private javax.swing.JLabel labelBlock;
+    private javax.swing.JLabel labelID;
     private javax.swing.JLabel labelIcon;
-    private javax.swing.JLabel labelLastname;
+    private javax.swing.JLabel labelLN;
     private javax.swing.JLabel labelName;
+    private javax.swing.JLabel labelPassw;
     private javax.swing.JLabel labelSubTitle;
+    private javax.swing.JLabel labelUser;
     private javax.swing.JPanel panelTop;
+    private javax.swing.JScrollPane scrollPane;
+    private javax.swing.JTextField textFieldApt;
     private javax.swing.JTextField textFieldBlock;
-    private javax.swing.JTextField textFieldLastname;
+    private javax.swing.JTextField textFieldID;
+    private javax.swing.JTextField textFieldLN;
     private javax.swing.JTextField textFieldName;
+    private javax.swing.JTextField textFieldPassw;
+    private javax.swing.JTextField textFieldUser;
     // End of variables declaration//GEN-END:variables
 }
