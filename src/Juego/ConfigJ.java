@@ -46,12 +46,12 @@ public class ConfigJ extends JPanel {
     private boolean pegar = false;
     private ArrayList<Nave> cantvida = new ArrayList();
     private ArrayList<Alien> cantaliens = new ArrayList();
-    private ImageIcon fondo = new ImageIcon("opcion2.gif");
+    private ImageIcon fondo = new ImageIcon("images/opcion2.2.gif");
     Font font = new Font("Courier", Font.BOLD,24);
   
     // Estado inicial del juego
     public final void ConfiguracionJ() {
-        String directory = "D:\\ProyectosNetbeans\\LABFINALL\\LABDB.accdb"; 
+        String directory = "LABDB.accdb"; 
         conectar= db.conexion(directory);
             for (int i = 0; i < 6; i++) {
                 for (int j = 0; j < 5; j++) {
@@ -62,10 +62,10 @@ public class ConfigJ extends JPanel {
       
         ImageIcon inicio = new ImageIcon("images/startf.png");
         JOptionPane.showMessageDialog(null,"","|Invasores del espacio|",JOptionPane.INFORMATION_MESSAGE,inicio);   
-        nave = new Nave(375, 730, null, controlesj);
+        nave = new Nave(450, 710, null, controlesj);
         //Contador de vidas para la nave
         for (int j = 0; j < Nvidas; j++) {
-            vida = new Nave(48 + (j * 20), 10, Color.WHITE, null);
+            vida = new Nave(95 + (j * 20), 8, Color.WHITE, null);
             cantvida.add(vida);
         }
     }
