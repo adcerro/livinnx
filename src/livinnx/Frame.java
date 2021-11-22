@@ -4,12 +4,15 @@ package livinnx;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
 import javax.swing.ImageIcon;
 
 
 /* @author natymartinez04*/
 public class Frame extends javax.swing.JFrame {
-
+    BaseDeDatos db = new BaseDeDatos();
+    Connection conectar;
+    
     /**
      * Creates new form Inicio
      */
@@ -17,6 +20,9 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon("src/livinnx/logolivinnx.png").getImage());
+        String directory = "LivinnxBD.accdb"; 
+        conectar= db.connection(directory);
+        
     }
     
     /**
@@ -190,7 +196,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
     }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PInicio;
     private javax.swing.JButton buttonLogIn;

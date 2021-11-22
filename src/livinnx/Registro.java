@@ -5,19 +5,27 @@
  */
 package livinnx;
 
+import java.sql.Connection;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author aland
  */
-public class Registro extends javax.swing.JPanel {
 
+public class Registro extends javax.swing.JPanel {
     /**
      * Creates new form register
      */
+    BaseDeDatos db = new BaseDeDatos();
+    Connection conectar;
     public Registro() {
         initComponents();
+        String directory = "LivinnxBD.accdb"; 
+        conectar= db.connection(directory);
+        
     }
     public JButton getBackButton(){
         return backButton;
@@ -101,6 +109,11 @@ public class Registro extends javax.swing.JPanel {
         textFieldName.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 textFieldNameMousePressed(evt);
+            }
+        });
+        textFieldName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textFieldNameActionPerformed(evt);
             }
         });
         innerPanel.add(textFieldName);
@@ -299,7 +312,84 @@ public class Registro extends javax.swing.JPanel {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-
+        String nombrep= textFieldName.getText();
+        String apellido = textFieldLN.getText();
+        String bloque = textFieldBlock.getText();
+        String apto = textFieldApt.getText();
+        String usuario = textFieldUser.getText();
+        String contrasena = textFieldPassw.getText();
+        String id = textFieldID.getText();
+        int c=0;
+        if(textFieldName.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un nombre valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldLN.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apeliido valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldBlock.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un bloque valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldApt.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apartamento valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldUser.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldPassw.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese una contraseña valida");
+        }else{
+            c=c+1;
+        }
+        
+        if(textFieldID.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese una identificacion valido");
+        }else{
+            c=c+1;
+        }
+        
+        if(c==7){
+            
+            String cedula [] ={"ID"};
+            DefaultTableModel S1= new DefaultTableModel (null,cedula);
+            String id_persona [] = new String[1];
+            String usuariop[] ={"Usuario"};
+            DefaultTableModel US= new DefaultTableModel (null,usuariop);
+            String us_persona [] = new String[1];
+            String query_buscar_id="SELECT COUNT (CEDULA) FROM PERSONAS "
+            + "WHERE CEDULA='"+id+"'";
+            String query_buscarusuario="SELECT COUNT (USUARIO) FROM PERSONAS "
+            + "WHERE USUARIO='"+usuario+"'";
+            System.out.println(query_buscarusuario);
+            S1= db.SEARCH (conectar, query_buscar_id, id_persona, S1);
+            US= db.SEARCH(conectar, query_buscarusuario, us_persona, US);
+            int cantid=Integer.parseInt(""+S1.getValueAt(0,0));
+            int cantus=Integer.parseInt(""+US.getValueAt(0,0));
+            
+            if(cantid ==0 && cantus==0){
+            String query_add_persona = "INSERT INTO PERSONAS (USUARIO,NOMBRE,APELLIDO,CEDULA,CLAVE,BLOQUE,APTO)"
+            + "VALUES ('"+usuario+"','"+nombrep+"','"+apellido+"','"+id+"','"+contrasena+"','"+bloque+"','"+apto+"')";
+            System.out.println(query_add_persona);
+            db.add_edit_delete(conectar, query_add_persona);
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Ya existe una persona registrada con esa cedula o usuario");
+            }
+        }
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void textFieldNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNameMousePressed
@@ -343,6 +433,10 @@ public class Registro extends javax.swing.JPanel {
             textFieldID.setText("");
         }
     }//GEN-LAST:event_textFieldIDMouseClicked
+
+    private void textFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textFieldNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,7 +5,10 @@
  */
 package livinnx;
 
+import java.sql.Connection;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,11 +16,12 @@ import javax.swing.JButton;
  */
 public class LogIn extends javax.swing.JPanel {
 
-    /**
-     * Creates new form log
-     */
+    BaseDeDatos db = new BaseDeDatos();
+    Connection conectar;
     public LogIn() {
         initComponents();
+        String directory = "LivinnxBD.accdb"; 
+        conectar= db.connection(directory);
     }
 
     /**
@@ -168,7 +172,23 @@ public class LogIn extends javax.swing.JPanel {
     }//GEN-LAST:event_userTextFieldActionPerformed
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-
+        
+        String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+userTextField.getText()+"' AND Clave='"+passwordTextField.getText()+"'";
+        String titles_table[]={"Usuario","Clave"};        
+        DefaultTableModel T6= new DefaultTableModel(null,titles_table);
+        String Results[]= new String[2];
+        T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
+        int cont=T6.getRowCount();
+        
+        if(cont == 0){
+            JOptionPane.showMessageDialog(null,"No hay un usuario con ese Usuario o Clave registrado");
+        }
+        else
+        {
+            
+        }
+        
+        
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
