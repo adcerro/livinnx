@@ -5,6 +5,7 @@
  */
 package livinnx;
 
+import java.awt.Color;
 import java.sql.Connection;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -25,7 +26,6 @@ public class Registro extends javax.swing.JPanel {
         initComponents();
         String directory = "LivinnxBD.accdb"; 
         conectar= db.connection(directory);
-        
     }
     public JButton getBackButton(){
         return backButton;
@@ -396,42 +396,49 @@ public class Registro extends javax.swing.JPanel {
     private void textFieldNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNameMousePressed
        if(textFieldName.getText().equalsIgnoreCase("Ingrese su nombre")){
             textFieldName.setText("");
+            textFieldName.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldNameMousePressed
 
     private void textFieldLNMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldLNMousePressed
        if(textFieldLN.getText().equalsIgnoreCase("Ingrese su apellido")){
             textFieldLN.setText("");
+            textFieldLN.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldLNMousePressed
 
     private void textFieldBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldBlockMouseClicked
         if(textFieldBlock.getText().equalsIgnoreCase("Ingrese el número del bloque")){
             textFieldBlock.setText("");
+            textFieldBlock.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldBlockMouseClicked
 
     private void textFieldAptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldAptMouseClicked
        if(textFieldApt.getText().equalsIgnoreCase("Ingrese el número del apartamento")){
             textFieldApt.setText("");
+            textFieldApt.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldAptMouseClicked
 
     private void textFieldUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldUserMouseClicked
         if(textFieldUser.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
             textFieldUser.setText("");
+            textFieldUser.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldUserMouseClicked
 
     private void textFieldPasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldPasswMouseClicked
         if(textFieldPassw.getText().equalsIgnoreCase("Ingrese contraseña")){
             textFieldPassw.setText("");
+            textFieldPassw.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldPasswMouseClicked
 
     private void textFieldIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldIDMouseClicked
        if(textFieldID.getText().equalsIgnoreCase("Ingrese numero de identificación")){
             textFieldID.setText("");
+            textFieldID.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldIDMouseClicked
 

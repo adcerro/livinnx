@@ -6,6 +6,7 @@
 package livinnx;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -177,6 +178,7 @@ public class LogIn extends javax.swing.JPanel {
     private void userTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextFieldMouseClicked
         if(userTextField.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
             userTextField.setText("");
+            userTextField.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_userTextFieldMouseClicked
 

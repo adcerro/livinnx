@@ -57,20 +57,20 @@ public class Frame extends javax.swing.JFrame {
 
         labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
         PInicio.add(labelcon);
-        labelcon.setBounds(10, 80, 213, 312);
+        labelcon.setBounds(360, 110, 190, 312);
 
         labelName.setBackground(new java.awt.Color(255, 255, 255));
         labelName.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
         labelName.setForeground(new java.awt.Color(0, 0, 153));
         labelName.setText("Livinnx");
         PInicio.add(labelName);
-        labelName.setBounds(220, 130, 290, 83);
+        labelName.setBounds(20, 140, 290, 83);
 
         labelSubName.setBackground(new java.awt.Color(255, 255, 255));
         labelSubName.setFont(new java.awt.Font("PT Serif Caption", 1, 60)); // NOI18N
         labelSubName.setText("RESERVAS");
         PInicio.add(labelSubName);
-        labelSubName.setBounds(220, 220, 350, 71);
+        labelSubName.setBounds(20, 240, 350, 71);
 
         panelTop.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -103,7 +103,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         PInicio.add(buttonRegister);
-        buttonRegister.setBounds(360, 310, 164, 60);
+        buttonRegister.setBounds(20, 350, 164, 60);
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,7 +120,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
         PInicio.add(buttonLogIn);
-        buttonLogIn.setBounds(330, 380, 220, 60);
+        buttonLogIn.setBounds(10, 420, 220, 60);
 
         getContentPane().add(PInicio, java.awt.BorderLayout.CENTER);
 
