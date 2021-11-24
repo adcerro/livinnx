@@ -208,16 +208,16 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="passwordTextField">
+        <Component class="javax.swing.JPasswordField" name="passwordField">
           <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Ingrese  contrase&#xf1;a"/>
+            <Property name="toolTipText" type="java.lang.String" value="Ingrese su contrase&#xf1;a aqui "/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordTextFieldActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="passwordFieldActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="310" width="230" height="30"/>
+              <AbsoluteConstraints x="20" y="320" width="230" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

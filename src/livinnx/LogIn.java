@@ -5,6 +5,9 @@
  */
 package livinnx;
 
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -15,8 +18,11 @@ import javax.swing.table.DefaultTableModel;
  * @author aland
  */
 public class LogIn extends javax.swing.JPanel {
+
     BaseDeDatos db = new BaseDeDatos();
     Connection conectar;
+    Usuario usuario;
+    
     public LogIn() {
         initComponents();
         String directory = "LivinnxBD.accdb"; 
@@ -41,7 +47,7 @@ public class LogIn extends javax.swing.JPanel {
         userTextField = new javax.swing.JTextField();
         buttonLogIn = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
-        passwordTextField = new javax.swing.JPasswordField();
+        passwordField = new javax.swing.JPasswordField();
 
         PInicio.setBackground(new java.awt.Color(255, 255, 255));
         PInicio.setLayout(null);
@@ -133,14 +139,14 @@ public class LogIn extends javax.swing.JPanel {
         PInicio.add(backButton);
         backButton.setBounds(200, 380, 110, 50);
 
-        passwordTextField.setToolTipText("Ingrese  contraseña");
-        passwordTextField.addActionListener(new java.awt.event.ActionListener() {
+        passwordField.setToolTipText("Ingrese su contraseña aqui ");
+        passwordField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordTextFieldActionPerformed(evt);
+                passwordFieldActionPerformed(evt);
             }
         });
-        PInicio.add(passwordTextField);
-        passwordTextField.setBounds(20, 310, 230, 30);
+        PInicio.add(passwordField);
+        passwordField.setBounds(20, 320, 230, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -161,7 +167,7 @@ public class LogIn extends javax.swing.JPanel {
     }//GEN-LAST:event_userTextFieldActionPerformed
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-       
+
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -174,9 +180,9 @@ public class LogIn extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_userTextFieldMouseClicked
 
-    private void passwordTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordTextFieldActionPerformed
+    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_passwordTextFieldActionPerformed
+    }//GEN-LAST:event_passwordFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -186,8 +192,8 @@ public class LogIn extends javax.swing.JPanel {
     private javax.swing.JLabel labelSubName;
     private javax.swing.JLabel labelcon;
     private javax.swing.JPanel panelTop;
+    private javax.swing.JPasswordField passwordField;
     private javax.swing.JLabel passwordLabel;
-    private javax.swing.JPasswordField passwordTextField;
     private javax.swing.JLabel userLabel;
     private javax.swing.JTextField userTextField;
     // End of variables declaration//GEN-END:variables
@@ -195,13 +201,13 @@ public class LogIn extends javax.swing.JPanel {
     public JButton getBackButton() {
         return backButton;
     }
-    public JButton getLogButton(){
+     public JButton getLogButton(){
         return buttonLogIn;
     }
     public String getUser(){
      return userTextField.getText();
     }
     public String getUserPassword(){
-        return passwordTextField.getPassword().toString();
+        return new String( passwordField.getPassword());
     }
 }

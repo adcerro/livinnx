@@ -6,9 +6,13 @@ package livinnx;
 
 
 import java.util.Calendar;
-import java.util.GregorianCalendar;
-import javax.swing.JPanel;
+import java.text.SimpleDateFormat;
+import java.sql.*;
+import java.text.DateFormat;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -16,59 +20,26 @@ import javax.swing.JTabbedPane;
  * @author natymartinez04
  */
 public class Reservas extends javax.swing.JFrame {
-    int mes;
-    String mess;
+    BaseDeDatos db = new BaseDeDatos();
+    Connection conectar;
+    Usuario usuario1;
     
     
-    public Reservas() {
-        initComponents();
-        mess2(mes);
+    public Reservas(Usuario usuario) {
+        initComponents();       
+        String directory = "LivinnxBD.accdb"; 
+        conectar= db.connection(directory);
     }
     
-    public String mess2(int mes){
-        GregorianCalendar gc = new GregorianCalendar();
-        mes = gc.get(Calendar.MONTH);
-        switch (mes){
-            case 1:
-                mess = "Enero";
-            break;
-            case 2:
-                mess = "Enero";
-            break;
-            case 3:
-                mess = "Enero";
-            break;
-            case 4:
-                mess = "Enero";
-            break;
-            case 5:
-                mess = "Enero";
-            break;
-            case 6:
-                mess = "Enero";
-            break;
-            case 7:
-                mess = "Enero";
-            break;
-            case 8:
-                mess = "Enero";
-            break;
-            case 9:
-                mess = "Enero";
-            break;
-            case 10:
-                mess = "Enero";
-            break;
-            case 11:
-                mess = "Enero";
-            break;
-            case 12:
-                mess = "Enero";
-            break;
-            
-        }
-        return mess;
+    public JTabbedPane getBaseP(){
+        return jTabbedPane2;
     }
+    
+    public JButton getBackButton() {
+        return jButton1;
+    }
+    
+    
     
     
     
@@ -82,37 +53,34 @@ public class Reservas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jDayChooser2 = new com.toedter.calendar.JDayChooser();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         gymPanel = new javax.swing.JPanel();
-        jDayChooser2 = new com.toedter.calendar.JDayChooser();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         buttonLogIn5 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jDayChooser1 = new com.toedter.calendar.JDayChooser();
         jLabel6 = new javax.swing.JLabel();
         gamePanel = new javax.swing.JPanel();
-        jDayChooser3 = new com.toedter.calendar.JDayChooser();
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jTextField2 = new javax.swing.JTextField();
         buttonLogIn4 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        jCalendar2 = new com.toedter.calendar.JCalendar();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         studyPanel = new javax.swing.JPanel();
-        jDayChooser4 = new com.toedter.calendar.JDayChooser();
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         buttonLogIn1 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
+        jCalendar3 = new com.toedter.calendar.JCalendar();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         poolPanel = new javax.swing.JPanel();
         messlabel = new javax.swing.JLabel();
@@ -120,19 +88,27 @@ public class Reservas extends javax.swing.JFrame {
         buttonLogIn6 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTextArea4 = new javax.swing.JTextArea();
-        jTextField4 = new javax.swing.JTextField();
-        jDayChooser1 = new com.toedter.calendar.JDayChooser();
+        jCalendar4 = new com.toedter.calendar.JCalendar();
+        jComboBox2 = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        gymPanel.setLayout(null);
+        jPanel1 = new javax.swing.JPanel();
+        jButton6 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jDayChooser2.setForeground(new java.awt.Color(0, 183, 189));
-        gymPanel.add(jDayChooser2);
-        jDayChooser2.setBounds(40, 100, 360, 310);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(760, 560));
+        setResizable(false);
+        setSize(new java.awt.Dimension(760, 560));
+
+        gymPanel.setLayout(null);
 
         jPanel6.setBackground(new java.awt.Color(255, 255, 255));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
@@ -155,13 +131,6 @@ public class Reservas extends javax.swing.JFrame {
         gymPanel.add(jPanel6);
         jPanel6.setBounds(480, 30, 190, 60);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        gymPanel.add(jScrollPane1);
-        jScrollPane1.setBounds(430, 110, 280, 160);
-
         buttonLogIn5.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn5.setForeground(new java.awt.Color(255, 255, 255));
         buttonLogIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
@@ -176,31 +145,37 @@ public class Reservas extends javax.swing.JFrame {
             }
         });
         gymPanel.add(buttonLogIn5);
-        buttonLogIn5.setBounds(520, 330, 120, 50);
-
-        jTextField1.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField1.setText("Ingrese la hora que desea reservar");
-        gymPanel.add(jTextField1);
-        jTextField1.setBounds(430, 280, 230, 40);
+        buttonLogIn5.setBounds(520, 230, 120, 50);
 
         jLabel5.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 183, 189));
         jLabel5.setText("  Escoga el día que desea reservar el gimnasio");
         jLabel5.setOpaque(true);
         gymPanel.add(jLabel5);
-        jLabel5.setBounds(40, 60, 360, 40);
+        jLabel5.setBounds(30, 60, 370, 40);
+
+        jCalendar1.setBackground(new java.awt.Color(255, 0, 51));
+        gymPanel.add(jCalendar1);
+        jCalendar1.setBounds(30, 100, 370, 270);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", " " }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        gymPanel.add(jComboBox1);
+        jComboBox1.setBounds(510, 190, 140, 20);
+        gymPanel.add(jDayChooser1);
+        jDayChooser1.setBounds(410, 330, 504, 119);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1795.jpg"))); // NOI18N
         gymPanel.add(jLabel6);
-        jLabel6.setBounds(0, 10, 740, 440);
+        jLabel6.setBounds(0, 0, 740, 440);
 
-        jTabbedPane2.addTab("Gymnasio", gymPanel);
+        jTabbedPane2.addTab("Gimnasio", gymPanel);
 
         gamePanel.setLayout(null);
-
-        jDayChooser3.setForeground(new java.awt.Color(0, 183, 189));
-        gamePanel.add(jDayChooser3);
-        jDayChooser3.setBounds(40, 100, 360, 310);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
@@ -223,18 +198,6 @@ public class Reservas extends javax.swing.JFrame {
         gamePanel.add(jPanel7);
         jPanel7.setBounds(480, 30, 190, 60);
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
-
-        gamePanel.add(jScrollPane2);
-        jScrollPane2.setBounds(430, 110, 280, 160);
-
-        jTextField2.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField2.setText("Ingrese la hora que desea reservar");
-        gamePanel.add(jTextField2);
-        jTextField2.setBounds(430, 280, 230, 40);
-
         buttonLogIn4.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn4.setForeground(new java.awt.Color(255, 255, 255));
         buttonLogIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
@@ -249,28 +212,37 @@ public class Reservas extends javax.swing.JFrame {
             }
         });
         gamePanel.add(buttonLogIn4);
-        buttonLogIn4.setBounds(520, 330, 120, 50);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1793.jpg"))); // NOI18N
-        gamePanel.add(jLabel1);
-        jLabel1.setBounds(0, 0, 740, 460);
+        buttonLogIn4.setBounds(520, 220, 120, 50);
 
         jLabel9.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 183, 189));
         jLabel9.setText("  Escoga el día que desea reservar la zona de juegos");
         jLabel9.setOpaque(true);
         gamePanel.add(jLabel9);
-        jLabel9.setBounds(40, 60, 360, 40);
+        jLabel9.setBounds(20, 60, 390, 40);
+        gamePanel.add(jCalendar2);
+        jCalendar2.setBounds(20, 100, 390, 290);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm" }));
+        gamePanel.add(jComboBox4);
+        jComboBox4.setBounds(510, 190, 140, 22);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1793.jpg"))); // NOI18N
+        gamePanel.add(jLabel1);
+        jLabel1.setBounds(0, 0, 740, 460);
         gamePanel.add(jLabel12);
         jLabel12.setBounds(460, 180, 0, 0);
+
+        jLabel14.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 183, 189));
+        jLabel14.setText("  Escoga el día que desea reservar el gimnasio");
+        jLabel14.setOpaque(true);
+        gamePanel.add(jLabel14);
+        jLabel14.setBounds(40, 60, 360, 40);
 
         jTabbedPane2.addTab("Zona de Juegos", gamePanel);
 
         studyPanel.setLayout(null);
-
-        jDayChooser4.setForeground(new java.awt.Color(0, 183, 189));
-        studyPanel.add(jDayChooser4);
-        jDayChooser4.setBounds(40, 100, 360, 310);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
@@ -307,26 +279,20 @@ public class Reservas extends javax.swing.JFrame {
             }
         });
         studyPanel.add(buttonLogIn1);
-        buttonLogIn1.setBounds(520, 330, 120, 50);
-
-        jTextField3.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField3.setText("Ingrese la hora que desea reservar");
-        studyPanel.add(jTextField3);
-        jTextField3.setBounds(430, 280, 230, 40);
-
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jScrollPane3.setViewportView(jTextArea3);
-
-        studyPanel.add(jScrollPane3);
-        jScrollPane3.setBounds(430, 110, 280, 160);
+        buttonLogIn1.setBounds(520, 230, 120, 50);
 
         jLabel13.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 183, 189));
         jLabel13.setText("  Escoga el día que desea reservar la zona de estudio");
         jLabel13.setOpaque(true);
         studyPanel.add(jLabel13);
-        jLabel13.setBounds(40, 60, 360, 40);
+        jLabel13.setBounds(20, 60, 390, 40);
+        studyPanel.add(jCalendar3);
+        jCalendar3.setBounds(20, 100, 390, 300);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm" }));
+        studyPanel.add(jComboBox3);
+        jComboBox3.setBounds(520, 200, 130, 22);
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1786.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
@@ -349,7 +315,7 @@ public class Reservas extends javax.swing.JFrame {
         jLabel2.setText("   Escoga el día que desea reservar la piscina");
         jLabel2.setOpaque(true);
         poolPanel.add(jLabel2);
-        jLabel2.setBounds(10, 60, 360, 40);
+        jLabel2.setBounds(20, 60, 370, 40);
 
         buttonLogIn6.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn6.setForeground(new java.awt.Color(255, 255, 255));
@@ -365,7 +331,7 @@ public class Reservas extends javax.swing.JFrame {
             }
         });
         poolPanel.add(buttonLogIn6);
-        buttonLogIn6.setBounds(520, 330, 120, 50);
+        buttonLogIn6.setBounds(510, 240, 120, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
@@ -387,22 +353,12 @@ public class Reservas extends javax.swing.JFrame {
 
         poolPanel.add(jPanel2);
         jPanel2.setBounds(480, 30, 190, 60);
+        poolPanel.add(jCalendar4);
+        jCalendar4.setBounds(20, 100, 370, 300);
 
-        jTextArea4.setColumns(20);
-        jTextArea4.setRows(5);
-        jScrollPane4.setViewportView(jTextArea4);
-
-        poolPanel.add(jScrollPane4);
-        jScrollPane4.setBounds(430, 110, 280, 160);
-
-        jTextField4.setForeground(new java.awt.Color(204, 204, 204));
-        jTextField4.setText("Ingrese la hora que desea reservar");
-        poolPanel.add(jTextField4);
-        jTextField4.setBounds(430, 280, 230, 40);
-
-        jDayChooser1.setForeground(new java.awt.Color(0, 183, 189));
-        poolPanel.add(jDayChooser1);
-        jDayChooser1.setBounds(10, 100, 360, 310);
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm" }));
+        poolPanel.add(jComboBox2);
+        jComboBox2.setBounds(500, 210, 140, 22);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1781.jpg"))); // NOI18N
         poolPanel.add(jLabel8);
@@ -410,15 +366,119 @@ public class Reservas extends javax.swing.JFrame {
 
         jTabbedPane2.addTab("Piscina", poolPanel);
 
+        jButton6.setText("Buscar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Usuario", "Zona", "Día", "Hora"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane5.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(289, 289, 289)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(163, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Mis Reservas", jPanel1);
+
+        jLabel15.setText("Te puedes contactar con nosotros al:");
+
+        jLabel16.setText("#################");
+
+        jLabel17.setText("Correoo");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel15)
+                .addGap(66, 66, 66)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel16))
+                .addContainerGap(343, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addContainerGap(409, Short.MAX_VALUE))
+        );
+
+        jTabbedPane2.addTab("Ayuda", jPanel3);
+
+        jButton1.setText("Salir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTabbedPane2)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -426,22 +486,473 @@ public class Reservas extends javax.swing.JFrame {
 
     private void buttonLogIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn1ActionPerformed
         // TODO add your handling code here:
+        String dia,hour;
+        SimpleDateFormat DF = new SimpleDateFormat("dd-MMM-yyyy");
+        dia= DF.format(jCalendar1.getDate());
+        if(jComboBox3.getSelectedIndex()==0)
+            {
+                hour="7 a.m";
+            }
+            else
+            {
+                if(jComboBox3.getSelectedIndex()==1)
+                {
+                    hour="8 a.m";
+                }
+                else
+                {
+                    if(jComboBox3.getSelectedIndex()==2)
+                    {
+                        hour="9 a.m";
+                    }
+                    else
+                    {
+                        if(jComboBox3.getSelectedIndex()==3)
+                        {
+                            hour="10 a.m";                            
+                        }
+                        else
+                        {
+                            if(jComboBox3.getSelectedIndex()==4)
+                            {
+                                hour="11 a.m";
+                            }
+                            else
+                            {
+                                if(jComboBox3.getSelectedIndex()==5)
+                                {
+                                    hour="12 p.m";
+                                }
+                                else
+                                {
+                                    if (jComboBox3.getSelectedIndex() == 6) {
+                                        hour = "1 p.m";
+                                    } 
+                                    else
+                                    {
+                                        if (jComboBox3.getSelectedIndex() == 7) {
+                                            hour = "2 p.m";
+                                        } 
+                                        else
+                                        {
+                                            if (jComboBox3.getSelectedIndex() == 8) {
+                                                hour = "3 p.m";
+                                            }
+                                            else
+                                            {
+                                                if (jComboBox3.getSelectedIndex() == 9) {
+                                                    hour = "4 p.m";
+                                                } 
+                                                else
+                                                {
+                                                    if (jComboBox3.getSelectedIndex() == 10) {
+                                                        hour = "5 p.m";
+                                                    } 
+                                                    else
+                                                    {
+                                                        if (jComboBox3.getSelectedIndex() == 11) {
+                                                            hour = "6 p.m";
+                                                        } 
+                                                        else
+                                                        {
+                                                            if (jComboBox3.getSelectedIndex() == 12) {
+                                                                hour = "7 p.m";
+                                                            }
+                                                            else
+                                                            {
+                                                                hour = "8 p.m";      
+                                                            }
+                                                        }
+                                                    }
+                                                } 
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                            
+                }
+            }
+        String query_buscarusuario = "SELECT Día,Hora FROM Reservas WHERE Día='" + dia + "' AND Hora='" + hour + "'";
+        String titles_table[] = {"Día", "Hora"};
+        DefaultTableModel CheckR = new DefaultTableModel(null, titles_table);
+        String Results[] = new String[2];
+        CheckR = db.SEARCH(conectar, query_buscarusuario, Results, CheckR);
+        int cont = CheckR.getRowCount();
+        String usu=usuario1.usuario;
+        System.out.println(usu);
+        if (cont != 0) {
+            JOptionPane.showMessageDialog(null, "Este horario ya se encuentra reservado");
+        } else {
+            String query_add_reserva = "INSERT INTO Reservas (Día,Hora,Area)" + "VALUES ('" + dia + "','" + hour + "',3)";
+            System.out.println(query_add_reserva);
+            String query_addperese = "INSERT INTO Reservas_Personas (ID_Reserva,ID_Persona)"+"VALUES ('"+3+"','"+7+"')";
+            System.out.println(query_addperese);
+            db.add_edit_delete(conectar, query_add_reserva);
+        }
     }//GEN-LAST:event_buttonLogIn1ActionPerformed
 
     private void buttonLogIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn4ActionPerformed
         // TODO add your handling code here:
+        String dia,hour;
+        SimpleDateFormat DF = new SimpleDateFormat("dd-MMM-yyyy");
+        dia= DF.format(jCalendar1.getDate());
+        if(jComboBox4.getSelectedIndex()==0)
+            {
+                hour="7 a.m";
+            }
+            else
+            {
+                if(jComboBox4.getSelectedIndex()==1)
+                {
+                    hour="8 a.m";
+                }
+                else
+                {
+                    if(jComboBox4.getSelectedIndex()==2)
+                    {
+                        hour="9 a.m";
+                    }
+                    else
+                    {
+                        if(jComboBox4.getSelectedIndex()==3)
+                        {
+                            hour="10 a.m";                            
+                        }
+                        else
+                        {
+                            if(jComboBox4.getSelectedIndex()==4)
+                            {
+                                hour="11 a.m";
+                            }
+                            else
+                            {
+                                if(jComboBox4.getSelectedIndex()==5)
+                                {
+                                    hour="12 p.m";
+                                }
+                                else
+                                {
+                                    if (jComboBox4.getSelectedIndex() == 6) {
+                                        hour = "1 p.m";
+                                    } 
+                                    else
+                                    {
+                                        if (jComboBox4.getSelectedIndex() == 7) {
+                                            hour = "2 p.m";
+                                        } 
+                                        else
+                                        {
+                                            if (jComboBox4.getSelectedIndex() == 8) {
+                                                hour = "3 p.m";
+                                            }
+                                            else
+                                            {
+                                                if (jComboBox4.getSelectedIndex() == 9) {
+                                                    hour = "4 p.m";
+                                                } 
+                                                else
+                                                {
+                                                    if (jComboBox4.getSelectedIndex() == 10) {
+                                                        hour = "5 p.m";
+                                                    } 
+                                                    else
+                                                    {
+                                                        if (jComboBox4.getSelectedIndex() == 11) {
+                                                            hour = "6 p.m";
+                                                        } 
+                                                        else
+                                                        {
+                                                            if (jComboBox4.getSelectedIndex() == 12) {
+                                                                hour = "7 p.m";
+                                                            }
+                                                            else
+                                                            {
+                                                                hour = "8 p.m";      
+                                                            }
+                                                        }
+                                                    }
+                                                } 
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                            
+                }
+            }
+        String query_buscarusuario = "SELECT Día,Hora FROM Reservas WHERE Día='" + dia + "' AND Hora='" + hour + "'";
+        String titles_table[] = {"Día", "Hora"};
+        DefaultTableModel CheckR = new DefaultTableModel(null, titles_table);
+        String Results[] = new String[2];
+        CheckR = db.SEARCH(conectar, query_buscarusuario, Results, CheckR);
+        int cont = CheckR.getRowCount();
+
+        if (cont != 0) {
+            JOptionPane.showMessageDialog(null, "Este horario ya se encuentra reservado");
+        } else {
+            String query_add_reserva = "INSERT INTO Reservas (Día,Hora,Area)" + "VALUES ('" + dia + "','" + hour + "',2)";
+            System.out.println(query_add_reserva);
+            db.add_edit_delete(conectar, query_add_reserva);
+        }
     }//GEN-LAST:event_buttonLogIn4ActionPerformed
 
     private void buttonLogIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn5ActionPerformed
         // TODO add your handling code here:
+        String dia,hour;
+        SimpleDateFormat DF = new SimpleDateFormat("dd-MMM-yyyy");
+        dia= DF.format(jDayChooser1.getDay());
+        System.out.println(dia);
+        if(jComboBox1.getSelectedIndex()==0)
+            {
+                hour="7 a.m";
+            }
+            else
+            {
+                if(jComboBox1.getSelectedIndex()==1)
+                {
+                    hour="8 a.m";
+                }
+                else
+                {
+                    if(jComboBox1.getSelectedIndex()==2)
+                    {
+                        hour="9 a.m";
+                    }
+                    else
+                    {
+                        if(jComboBox1.getSelectedIndex()==3)
+                        {
+                            hour="10 a.m";                            
+                        }
+                        else
+                        {
+                            if(jComboBox1.getSelectedIndex()==4)
+                            {
+                                hour="11 a.m";
+                            }
+                            else
+                            {
+                                if(jComboBox1.getSelectedIndex()==5)
+                                {
+                                    hour="12 p.m";
+                                }
+                                else
+                                {
+                                    if (jComboBox1.getSelectedIndex() == 6) {
+                                        hour = "1 p.m";
+                                    } 
+                                    else
+                                    {
+                                        if (jComboBox1.getSelectedIndex() == 7) {
+                                            hour = "2 p.m";
+                                        } 
+                                        else
+                                        {
+                                            if (jComboBox1.getSelectedIndex() == 8) {
+                                                hour = "3 p.m";
+                                            }
+                                            else
+                                            {
+                                                if (jComboBox1.getSelectedIndex() == 9) {
+                                                    hour = "4 p.m";
+                                                } 
+                                                else
+                                                {
+                                                    if (jComboBox1.getSelectedIndex() == 10) {
+                                                        hour = "5 p.m";
+                                                    } 
+                                                    else
+                                                    {
+                                                        if (jComboBox1.getSelectedIndex() == 11) {
+                                                            hour = "6 p.m";
+                                                        } 
+                                                        else
+                                                        {
+                                                            if (jComboBox1.getSelectedIndex() == 12) {
+                                                                hour = "7 p.m";
+                                                            }
+                                                            else
+                                                            {
+                                                                hour = "8 p.m";      
+                                                            }
+                                                        }
+                                                    }
+                                                } 
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                            
+                }
+            }
+        
+        String query_buscarusuario = "SELECT Día,Hora FROM Reservas WHERE Día='"+dia+"' AND Hora='"+hour+"'";      
+        String titles_table[] = {"Día", "Hora"};
+        DefaultTableModel CheckR = new DefaultTableModel(null, titles_table);
+        String Results[] = new String[2];
+        CheckR = db.SEARCH(conectar, query_buscarusuario, Results, CheckR);
+        int cont = CheckR.getRowCount();
+        
+        if(cont != 0){
+            JOptionPane.showMessageDialog(null,"Este horario ya se encuentra reservado");
+        }
+        else
+        {
+            String query_add_reserva = "INSERT INTO Reservas (Día,Hora,Area)"+"VALUES ('"+dia+"','" +hour+ "',1)";
+            System.out.println(query_add_reserva);
+            db.add_edit_delete(conectar, query_add_reserva);
+            JOptionPane.showMessageDialog(null,"La reserva se realizó correctamente");
+        }
+        
     }//GEN-LAST:event_buttonLogIn5ActionPerformed
 
     private void buttonLogIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn6ActionPerformed
         // TODO add your handling code here:
+        String dia,hour;
+        SimpleDateFormat DF = new SimpleDateFormat("dd-MMM-yyyy");
+        dia= DF.format(jCalendar1.getDate());
+        if(jComboBox2.getSelectedIndex()==0)
+            {
+                hour="7 a.m";
+            }
+            else
+            {
+                if(jComboBox2.getSelectedIndex()==1)
+                {
+                    hour="8 a.m";
+                }
+                else
+                {
+                    if(jComboBox2.getSelectedIndex()==2)
+                    {
+                        hour="9 a.m";
+                    }
+                    else
+                    {
+                        if(jComboBox2.getSelectedIndex()==3)
+                        {
+                            hour="10 a.m";                            
+                        }
+                        else
+                        {
+                            if(jComboBox2.getSelectedIndex()==4)
+                            {
+                                hour="11 a.m";
+                            }
+                            else
+                            {
+                                if(jComboBox2.getSelectedIndex()==5)
+                                {
+                                    hour="12 p.m";
+                                }
+                                else
+                                {
+                                    if (jComboBox2.getSelectedIndex() == 6) {
+                                        hour = "1 p.m";
+                                    } 
+                                    else
+                                    {
+                                        if (jComboBox2.getSelectedIndex() == 7) {
+                                            hour = "2 p.m";
+                                        } 
+                                        else
+                                        {
+                                            if (jComboBox2.getSelectedIndex() == 8) {
+                                                hour = "3 p.m";
+                                            }
+                                            else
+                                            {
+                                                if (jComboBox2.getSelectedIndex() == 9) {
+                                                    hour = "4 p.m";
+                                                } 
+                                                else
+                                                {
+                                                    if (jComboBox2.getSelectedIndex() == 10) {
+                                                        hour = "5 p.m";
+                                                    } 
+                                                    else
+                                                    {
+                                                        if (jComboBox2.getSelectedIndex() == 11) {
+                                                            hour = "6 p.m";
+                                                        } 
+                                                        else
+                                                        {
+                                                            if (jComboBox2.getSelectedIndex() == 12) {
+                                                                hour = "7 p.m";
+                                                            }
+                                                            else
+                                                            {
+                                                                hour = "8 p.m";      
+                                                            }
+                                                        }
+                                                    }
+                                                } 
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                            
+                }
+            }
+        String query_buscarusuario = "SELECT Día,Hora FROM Reservas WHERE Día='" + dia + "' AND Hora='" + hour + "'";
+        String titles_table[] = {"Día", "Hora"};
+        DefaultTableModel CheckR = new DefaultTableModel(null, titles_table);
+        String Results[] = new String[2];
+        CheckR = db.SEARCH(conectar, query_buscarusuario, Results, CheckR);
+        int cont = CheckR.getRowCount();
+
+        if (cont != 0) {
+            JOptionPane.showMessageDialog(null, "Este horario ya se encuentra reservado");
+        } else {
+            String query_add_reserva = "INSERT INTO Reservas (Día,Hora,Area)" + "VALUES ('" + dia + "','" + hour + "',4)";
+            System.out.println(query_add_reserva);
+            db.add_edit_delete(conectar, query_add_reserva);
+        }
     }//GEN-LAST:event_buttonLogIn6ActionPerformed
-    public JTabbedPane getMainPanel(){
-        return jTabbedPane2;
-    }
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        String usuario = usuario1.usuario;
+        System.out.println(usuario);
+        //usuario = userTextField.getText();
+        String query_search_reserv = "SELECT PERSONAS.USUARIO,AREAS.NOMBRE,RESERVAS.DÍA,RESERVAS.HORA FROM PERSONAS,RESERVAS_PERSONAS,RESERVAS,AREAS WHERE PERSONAS.USUARIO='"+usuario+"' AND RESERVAS_PERSONAS.ID_PERSONA=PERSONAS.ID AND RESERVAS_PERSONAS.ID_RESERVA = RESERVAS.ID AND RESERVAS.AREA =AREAS.ID";
+        System.out.println(query_search_reserv);
+        String titles_table[] = {"Usuario","Zona","Día", "Hora"};
+        DefaultTableModel T4 = new DefaultTableModel(null, titles_table);
+        String Results[] = new String[4];
+        T4 = db.SEARCH(conectar, query_search_reserv, Results, T4);
+        jTable1.setModel(T4);
+       
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        Reservas res = new Reservas(usuario1);
+        Frame fre = new Frame();
+        res.setVisible(false);
+        fre.setVisible(true);
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -472,7 +983,8 @@ public class Reservas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Reservas().setVisible(true);
+                
+              
             }
         });
     }
@@ -484,15 +996,27 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JButton buttonLogIn6;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JPanel gymPanel;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton6;
+    private com.toedter.calendar.JCalendar jCalendar1;
+    private com.toedter.calendar.JCalendar jCalendar2;
+    private com.toedter.calendar.JCalendar jCalendar3;
+    private com.toedter.calendar.JCalendar jCalendar4;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
     private com.toedter.calendar.JDayChooser jDayChooser1;
     private com.toedter.calendar.JDayChooser jDayChooser2;
-    private com.toedter.calendar.JDayChooser jDayChooser3;
-    private com.toedter.calendar.JDayChooser jDayChooser4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -501,23 +1025,15 @@ public class Reservas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
-    private javax.swing.JTextArea jTextArea4;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel messlabel;
     private javax.swing.JPanel poolPanel;
     private javax.swing.JPanel studyPanel;

@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 public class Frame extends javax.swing.JFrame {
     BaseDeDatos db = new BaseDeDatos();
     Connection conectar;
+    Usuario usuario;
     
     /**
      * Creates new form Inicio
@@ -24,6 +25,7 @@ public class Frame extends javax.swing.JFrame {
         this.setIconImage(new ImageIcon("src/livinnx/logolivinnx.png").getImage());
         String directory = "LivinnxBD.accdb"; 
         conectar= db.connection(directory);
+        
         
     }
     
@@ -144,24 +146,38 @@ public class Frame extends javax.swing.JFrame {
         log.getLogButton().addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent ae) {
-            String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+log.getUser()+"' AND Clave='"+log.getUserPassword()+"'";
-            String titles_table[]={"Usuario","Clave"};        
-            DefaultTableModel T6= new DefaultTableModel(null,titles_table);
-            String Results[]= new String[2];
-            T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
-            int cont=T6.getRowCount();
+                String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+log.getUser()+"' AND Clave='"+log.getUserPassword()+"'";
+                String titles_table[]={"Usuario","Clave"};        
+                DefaultTableModel T6= new DefaultTableModel(null,titles_table);
+                String Results[]= new String[2];
+                T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
+                int cont=T6.getRowCount();
         
-            if(cont == 0){
-                JOptionPane.showMessageDialog(null,"No hay un usuario con ese Usuario o Clave registrado");
-            }
-            else{
-                Reservas re = new Reservas();
+                if(cont == 0){
+                    JOptionPane.showMessageDialog(null,"No hay una persona con ese Usuario o Clave registrado");
+                }
+                else
+                {   
+                String us=log.getUser();
+                usuario = new Usuario(us);
+                Reservas res = new Reservas(usuario);
                 remove(log);
-                add(re.getMainPanel(),BorderLayout.CENTER );
-                setSize(757,499);
+                add(res.getBaseP(), BorderLayout.CENTER);
+                setSize(760,560);
                 revalidate();
                 repaint();
-            }   
+                res.getBackButton().addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent ae) {
+                    remove(res);
+                    add(PInicio, BorderLayout.CENTER);
+                    setSize(590,550);
+                    revalidate();
+                    repaint();
+                }
+
+            });
+        }
             }
             
         });
@@ -180,8 +196,7 @@ public class Frame extends javax.swing.JFrame {
                 add(PInicio,BorderLayout.CENTER );
                 revalidate();
                 repaint();
-            }
-            
+            }           
         });
         
         

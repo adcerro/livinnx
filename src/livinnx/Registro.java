@@ -385,6 +385,7 @@ public class Registro extends javax.swing.JPanel {
             + "VALUES ('"+usuario+"','"+nombrep+"','"+apellido+"','"+id+"','"+contrasena+"','"+bloque+"','"+apto+"')";
             System.out.println(query_add_persona);
             db.add_edit_delete(conectar, query_add_persona);
+            JOptionPane.showMessageDialog(null,"El usuario se registró correctamente");
             }
             else{
                 JOptionPane.showMessageDialog(null,"Ya existe una persona registrada con esa cedula o usuario");
