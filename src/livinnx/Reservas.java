@@ -7,6 +7,8 @@ package livinnx;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 
 /**
@@ -437,7 +439,9 @@ public class Reservas extends javax.swing.JFrame {
     private void buttonLogIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn6ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonLogIn6ActionPerformed
-
+    public JTabbedPane getMainPanel(){
+        return jTabbedPane2;
+    }
     /**
      * @param args the command line arguments
      */

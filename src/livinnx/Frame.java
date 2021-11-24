@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /* @author natymartinez04*/
@@ -136,6 +138,30 @@ public class Frame extends javax.swing.JFrame {
                 add(PInicio,BorderLayout.CENTER );
                 revalidate();
                 repaint();
+            }
+            
+        });
+        log.getLogButton().addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+            String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+log.getUser()+"' AND Clave='"+log.getUserPassword()+"'";
+            String titles_table[]={"Usuario","Clave"};        
+            DefaultTableModel T6= new DefaultTableModel(null,titles_table);
+            String Results[]= new String[2];
+            T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
+            int cont=T6.getRowCount();
+        
+            if(cont == 0){
+                JOptionPane.showMessageDialog(null,"No hay un usuario con ese Usuario o Clave registrado");
+            }
+            else{
+                Reservas re = new Reservas();
+                remove(log);
+                add(re.getMainPanel(),BorderLayout.CENTER );
+                setSize(757,499);
+                revalidate();
+                repaint();
+            }   
             }
             
         });

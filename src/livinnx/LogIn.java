@@ -15,7 +15,6 @@ import javax.swing.table.DefaultTableModel;
  * @author aland
  */
 public class LogIn extends javax.swing.JPanel {
-
     BaseDeDatos db = new BaseDeDatos();
     Connection conectar;
     public LogIn() {
@@ -162,23 +161,7 @@ public class LogIn extends javax.swing.JPanel {
     }//GEN-LAST:event_userTextFieldActionPerformed
 
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-        
-        String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+userTextField.getText()+"' AND Clave='"+passwordTextField.getPassword()+"'";
-        String titles_table[]={"Usuario","Clave"};        
-        DefaultTableModel T6= new DefaultTableModel(null,titles_table);
-        String Results[]= new String[2];
-        T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
-        int cont=T6.getRowCount();
-        
-        if(cont == 0){
-            JOptionPane.showMessageDialog(null,"No hay un usuario con ese Usuario o Clave registrado");
-        }
-        else
-        {
-            
-        }
-        
-        
+       
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -211,5 +194,14 @@ public class LogIn extends javax.swing.JPanel {
 
     public JButton getBackButton() {
         return backButton;
+    }
+    public JButton getLogButton(){
+        return buttonLogIn;
+    }
+    public String getUser(){
+     return userTextField.getText();
+    }
+    public String getUserPassword(){
+        return passwordTextField.getPassword().toString();
     }
 }
