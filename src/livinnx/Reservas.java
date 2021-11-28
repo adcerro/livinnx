@@ -39,8 +39,11 @@ public int getId(){
         return idusuario;
     }
  public JButton getBackButton() {
-        return logoutButton;
+        return buttonLogOut;
     }
+ public void setgreetLabel(){
+     greetLabel.setText("Saludos "+usuario1.usuario);
+ }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,11 +53,11 @@ public int getId(){
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane2 = new javax.swing.JTabbedPane();
+        TabbedPanePlaces = new javax.swing.JTabbedPane();
         gymPanel = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        buttonLogIn5 = new javax.swing.JButton();
+        buttonReserveGym = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jCalendar1 = new com.toedter.calendar.JCalendar();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -63,7 +66,7 @@ public int getId(){
         gamePanel = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
-        buttonLogIn4 = new javax.swing.JButton();
+        buttonReserveGame = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         jCalendar2 = new com.toedter.calendar.JCalendar();
         jComboBox4 = new javax.swing.JComboBox<>();
@@ -74,7 +77,7 @@ public int getId(){
         studyPanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        buttonLogIn1 = new javax.swing.JButton();
+        buttonReserveStudy = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         jCalendar3 = new com.toedter.calendar.JCalendar();
         jComboBox3 = new javax.swing.JComboBox<>();
@@ -83,7 +86,7 @@ public int getId(){
         poolPanel = new javax.swing.JPanel();
         messlabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        buttonLogIn6 = new javax.swing.JButton();
+        buttonReservePool = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jCalendar4 = new com.toedter.calendar.JCalendar();
@@ -91,7 +94,7 @@ public int getId(){
         jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         reservesPanel = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
+        buttonSearch = new javax.swing.JButton();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
@@ -109,10 +112,10 @@ public int getId(){
         jLabel18 = new javax.swing.JLabel();
         lowerPanel = new javax.swing.JPanel();
         greetLabel = new javax.swing.JLabel();
-        logoutButton = new javax.swing.JButton();
+        buttonLogOut = new javax.swing.JButton();
 
         setMinimumSize(new java.awt.Dimension(750, 560));
-        setLayout(null);
+        setLayout(new java.awt.BorderLayout());
 
         gymPanel.setLayout(null);
 
@@ -137,21 +140,21 @@ public int getId(){
         gymPanel.add(jPanel6);
         jPanel6.setBounds(480, 30, 190, 60);
 
-        buttonLogIn5.setBackground(new java.awt.Color(255, 255, 255));
-        buttonLogIn5.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
-        buttonLogIn5.setBorderPainted(false);
-        buttonLogIn5.setContentAreaFilled(false);
-        buttonLogIn5.setFocusPainted(false);
-        buttonLogIn5.setMaximumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn5.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn5.addActionListener(new java.awt.event.ActionListener() {
+        buttonReserveGym.setBackground(new java.awt.Color(255, 255, 255));
+        buttonReserveGym.setForeground(new java.awt.Color(255, 255, 255));
+        buttonReserveGym.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_reservar.png"))); // NOI18N
+        buttonReserveGym.setBorderPainted(false);
+        buttonReserveGym.setContentAreaFilled(false);
+        buttonReserveGym.setFocusPainted(false);
+        buttonReserveGym.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonReserveGym.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonReserveGym.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogIn5ActionPerformed(evt);
+                buttonReserveGymActionPerformed(evt);
             }
         });
-        gymPanel.add(buttonLogIn5);
-        buttonLogIn5.setBounds(510, 310, 120, 50);
+        gymPanel.add(buttonReserveGym);
+        buttonReserveGym.setBounds(510, 310, 120, 50);
 
         jLabel5.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 183, 189));
@@ -182,11 +185,11 @@ public int getId(){
         gymPanel.add(jButton2);
         jButton2.setBounds(480, 250, 170, 22);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1795.jpg"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/IMG_1795.jpg"))); // NOI18N
         gymPanel.add(jLabel6);
         jLabel6.setBounds(0, 0, 760, 460);
 
-        jTabbedPane2.addTab("Gimnasio", gymPanel);
+        TabbedPanePlaces.addTab("Gimnasio", gymPanel);
 
         gamePanel.setLayout(null);
 
@@ -211,21 +214,21 @@ public int getId(){
         gamePanel.add(jPanel7);
         jPanel7.setBounds(480, 30, 190, 60);
 
-        buttonLogIn4.setBackground(new java.awt.Color(255, 255, 255));
-        buttonLogIn4.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
-        buttonLogIn4.setBorderPainted(false);
-        buttonLogIn4.setContentAreaFilled(false);
-        buttonLogIn4.setFocusPainted(false);
-        buttonLogIn4.setMaximumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn4.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn4.addActionListener(new java.awt.event.ActionListener() {
+        buttonReserveGame.setBackground(new java.awt.Color(255, 255, 255));
+        buttonReserveGame.setForeground(new java.awt.Color(255, 255, 255));
+        buttonReserveGame.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_reservar.png"))); // NOI18N
+        buttonReserveGame.setBorderPainted(false);
+        buttonReserveGame.setContentAreaFilled(false);
+        buttonReserveGame.setFocusPainted(false);
+        buttonReserveGame.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonReserveGame.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonReserveGame.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogIn4ActionPerformed(evt);
+                buttonReserveGameActionPerformed(evt);
             }
         });
-        gamePanel.add(buttonLogIn4);
-        buttonLogIn4.setBounds(520, 330, 120, 50);
+        gamePanel.add(buttonReserveGame);
+        buttonReserveGame.setBounds(520, 330, 120, 50);
 
         jLabel9.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 183, 189));
@@ -251,7 +254,7 @@ public int getId(){
         gamePanel.add(jButton3);
         jButton3.setBounds(500, 250, 170, 22);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1793.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/IMG_1793.jpg"))); // NOI18N
         gamePanel.add(jLabel1);
         jLabel1.setBounds(0, 0, 760, 470);
 
@@ -262,7 +265,7 @@ public int getId(){
         gamePanel.add(jLabel14);
         jLabel14.setBounds(40, 60, 360, 40);
 
-        jTabbedPane2.addTab("Zona de Juegos", gamePanel);
+        TabbedPanePlaces.addTab("Zona de Juegos", gamePanel);
 
         studyPanel.setLayout(null);
 
@@ -287,21 +290,21 @@ public int getId(){
         studyPanel.add(jPanel8);
         jPanel8.setBounds(480, 30, 190, 60);
 
-        buttonLogIn1.setBackground(new java.awt.Color(255, 255, 255));
-        buttonLogIn1.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
-        buttonLogIn1.setBorderPainted(false);
-        buttonLogIn1.setContentAreaFilled(false);
-        buttonLogIn1.setFocusPainted(false);
-        buttonLogIn1.setMaximumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn1.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn1.addActionListener(new java.awt.event.ActionListener() {
+        buttonReserveStudy.setBackground(new java.awt.Color(255, 255, 255));
+        buttonReserveStudy.setForeground(new java.awt.Color(255, 255, 255));
+        buttonReserveStudy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_reservar.png"))); // NOI18N
+        buttonReserveStudy.setBorderPainted(false);
+        buttonReserveStudy.setContentAreaFilled(false);
+        buttonReserveStudy.setFocusPainted(false);
+        buttonReserveStudy.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonReserveStudy.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonReserveStudy.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogIn1ActionPerformed(evt);
+                buttonReserveStudyActionPerformed(evt);
             }
         });
-        studyPanel.add(buttonLogIn1);
-        buttonLogIn1.setBounds(520, 340, 120, 50);
+        studyPanel.add(buttonReserveStudy);
+        buttonReserveStudy.setBounds(520, 340, 120, 50);
 
         jLabel13.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 183, 189));
@@ -325,12 +328,12 @@ public int getId(){
         studyPanel.add(jButton4);
         jButton4.setBounds(510, 260, 150, 22);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1786.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/IMG_1786.jpg"))); // NOI18N
         jLabel11.setText("jLabel11");
         studyPanel.add(jLabel11);
         jLabel11.setBounds(0, 0, 760, 450);
 
-        jTabbedPane2.addTab("Zona de Estudio", studyPanel);
+        TabbedPanePlaces.addTab("Zona de Estudio", studyPanel);
 
         poolPanel.setBackground(new java.awt.Color(255, 255, 255));
         poolPanel.setLayout(null);
@@ -348,21 +351,21 @@ public int getId(){
         poolPanel.add(jLabel2);
         jLabel2.setBounds(20, 60, 370, 40);
 
-        buttonLogIn6.setBackground(new java.awt.Color(255, 255, 255));
-        buttonLogIn6.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_reservar.png"))); // NOI18N
-        buttonLogIn6.setBorderPainted(false);
-        buttonLogIn6.setContentAreaFilled(false);
-        buttonLogIn6.setFocusPainted(false);
-        buttonLogIn6.setMaximumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn6.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn6.addActionListener(new java.awt.event.ActionListener() {
+        buttonReservePool.setBackground(new java.awt.Color(255, 255, 255));
+        buttonReservePool.setForeground(new java.awt.Color(255, 255, 255));
+        buttonReservePool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_reservar.png"))); // NOI18N
+        buttonReservePool.setBorderPainted(false);
+        buttonReservePool.setContentAreaFilled(false);
+        buttonReservePool.setFocusPainted(false);
+        buttonReservePool.setMaximumSize(new java.awt.Dimension(270, 62));
+        buttonReservePool.setMinimumSize(new java.awt.Dimension(270, 62));
+        buttonReservePool.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogIn6ActionPerformed(evt);
+                buttonReservePoolActionPerformed(evt);
             }
         });
-        poolPanel.add(buttonLogIn6);
-        buttonLogIn6.setBounds(500, 340, 120, 50);
+        poolPanel.add(buttonReservePool);
+        buttonReservePool.setBounds(500, 340, 120, 50);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(210, 12, 84), 5));
@@ -400,22 +403,22 @@ public int getId(){
         poolPanel.add(jButton5);
         jButton5.setBounds(490, 270, 160, 22);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/IMG_1781.jpg"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/IMG_1781.jpg"))); // NOI18N
         poolPanel.add(jLabel8);
         jLabel8.setBounds(0, -10, 760, 480);
 
-        jTabbedPane2.addTab("Piscina", poolPanel);
+        TabbedPanePlaces.addTab("Piscina", poolPanel);
 
         reservesPanel.setLayout(null);
 
-        jButton6.setText("Buscar");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        buttonSearch.setText("Buscar");
+        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                buttonSearchActionPerformed(evt);
             }
         });
-        reservesPanel.add(jButton6);
-        jButton6.setBounds(610, 70, 130, 40);
+        reservesPanel.add(buttonSearch);
+        buttonSearch.setBounds(610, 70, 130, 40);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -463,11 +466,11 @@ public int getId(){
         reservesPanel.add(jPanel9);
         jPanel9.setBounds(30, 50, 290, 60);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/reserva2.jpeg"))); // NOI18N
+        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/reserva2.jpeg"))); // NOI18N
         reservesPanel.add(jLabel19);
         jLabel19.setBounds(0, 0, 760, 490);
 
-        jTabbedPane2.addTab("Mis Reservas", reservesPanel);
+        TabbedPanePlaces.addTab("Mis Reservas", reservesPanel);
 
         helpPanel.setLayout(null);
         helpPanel.add(jLabel15);
@@ -510,49 +513,49 @@ public int getId(){
         helpPanel.add(jPanel4);
         jPanel4.setBounds(20, 70, 650, 260);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/Ayuda.jpeg"))); // NOI18N
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/Ayuda.jpeg"))); // NOI18N
         helpPanel.add(jLabel18);
         jLabel18.setBounds(0, -10, 770, 480);
 
-        jTabbedPane2.addTab("Ayuda", helpPanel);
+        TabbedPanePlaces.addTab("Ayuda", helpPanel);
 
-        add(jTabbedPane2);
-        jTabbedPane2.setBounds(0, 0, 762, 483);
+        add(TabbedPanePlaces, java.awt.BorderLayout.CENTER);
 
         lowerPanel.setBackground(new java.awt.Color(153, 153, 153));
+        lowerPanel.setInheritsPopupMenu(true);
+        lowerPanel.setPreferredSize(new java.awt.Dimension(757, 53));
 
         greetLabel.setFont(new java.awt.Font("PingFang TC", 1, 24)); // NOI18N
+        greetLabel.setForeground(new java.awt.Color(255, 255, 255));
 
-        logoutButton.setText("jButton7");
+        buttonLogOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_logOut.png"))); // NOI18N
+        buttonLogOut.setBorderPainted(false);
+        buttonLogOut.setContentAreaFilled(false);
+        buttonLogOut.setFocusable(false);
 
         javax.swing.GroupLayout lowerPanelLayout = new javax.swing.GroupLayout(lowerPanel);
         lowerPanel.setLayout(lowerPanelLayout);
         lowerPanelLayout.setHorizontalGroup(
             lowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lowerPanelLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(greetLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
-                .addComponent(logoutButton)
-                .addGap(41, 41, 41))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addComponent(buttonLogOut))
         );
         lowerPanelLayout.setVerticalGroup(
             lowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lowerPanelLayout.createSequentialGroup()
                 .addGroup(lowerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lowerPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(greetLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(lowerPanelLayout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(logoutButton)))
-                .addContainerGap(10, Short.MAX_VALUE))
+                    .addComponent(buttonLogOut)
+                    .addComponent(greetLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 5, Short.MAX_VALUE))
         );
 
-        add(lowerPanel);
-        lowerPanel.setBounds(0, 480, 762, 80);
+        add(lowerPanel, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void buttonLogIn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn5ActionPerformed
+    private void buttonReserveGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveGymActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
         String diahoy = "";
@@ -651,7 +654,7 @@ public int getId(){
         } catch (ParseException ex) {
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_buttonLogIn5ActionPerformed
+    }//GEN-LAST:event_buttonReserveGymActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
@@ -757,7 +760,7 @@ public int getId(){
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void buttonLogIn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn4ActionPerformed
+    private void buttonReserveGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveGameActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
         String diahoy = "";
@@ -856,7 +859,7 @@ public int getId(){
         } catch (ParseException ex) {
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_buttonLogIn4ActionPerformed
+    }//GEN-LAST:event_buttonReserveGameActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -973,7 +976,7 @@ public int getId(){
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void buttonLogIn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn1ActionPerformed
+    private void buttonReserveStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveStudyActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
         String diahoy = "";
@@ -1072,7 +1075,7 @@ public int getId(){
         } catch (ParseException ex) {
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_buttonLogIn1ActionPerformed
+    }//GEN-LAST:event_buttonReserveStudyActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
@@ -1217,7 +1220,7 @@ public int getId(){
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void buttonLogIn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogIn6ActionPerformed
+    private void buttonReservePoolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReservePoolActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
         String diahoy = "";
@@ -1315,7 +1318,7 @@ public int getId(){
         } catch (ParseException ex) {
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_buttonLogIn6ActionPerformed
+    }//GEN-LAST:event_buttonReservePoolActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
@@ -1416,7 +1419,7 @@ public int getId(){
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
         // TODO add your handling code here:
         String usuario = usuario1.usuario;
         System.out.println(usuario);
@@ -1429,14 +1432,17 @@ public int getId(){
         T4 = db.SEARCH(conectar, query_search_reserv, Results, T4);
         jTable1.setModel(T4);
 
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_buttonSearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonLogIn1;
-    private javax.swing.JButton buttonLogIn4;
-    private javax.swing.JButton buttonLogIn5;
-    private javax.swing.JButton buttonLogIn6;
+    private javax.swing.JTabbedPane TabbedPanePlaces;
+    private javax.swing.JButton buttonLogOut;
+    private javax.swing.JButton buttonReserveGame;
+    private javax.swing.JButton buttonReserveGym;
+    private javax.swing.JButton buttonReservePool;
+    private javax.swing.JButton buttonReserveStudy;
+    private javax.swing.JButton buttonSearch;
     private javax.swing.JPanel gamePanel;
     private javax.swing.JLabel greetLabel;
     private javax.swing.JPanel gymPanel;
@@ -1445,7 +1451,6 @@ public int getId(){
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private com.toedter.calendar.JCalendar jCalendar1;
     private com.toedter.calendar.JCalendar jCalendar2;
     private com.toedter.calendar.JCalendar jCalendar3;
@@ -1482,12 +1487,10 @@ public int getId(){
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelSubName1;
     private javax.swing.JLabel labelSubName2;
     private javax.swing.JLabel labelSubName3;
-    private javax.swing.JButton logoutButton;
     private javax.swing.JPanel lowerPanel;
     private javax.swing.JLabel messlabel;
     private javax.swing.JPanel poolPanel;

@@ -53,9 +53,9 @@ public class LogIn extends javax.swing.JPanel {
         PInicio.setBackground(new java.awt.Color(255, 255, 255));
         PInicio.setLayout(null);
 
-        labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
+        labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/logolivinnx.png"))); // NOI18N
         PInicio.add(labelcon);
-        labelcon.setBounds(380, 130, 213, 312);
+        labelcon.setBounds(380, 130, 200, 312);
 
         labelSubName.setBackground(new java.awt.Color(255, 255, 255));
         labelSubName.setFont(new java.awt.Font("PT Serif Caption", 1, 48)); // NOI18N
@@ -110,7 +110,7 @@ public class LogIn extends javax.swing.JPanel {
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_iniciar-sesion (1).png"))); // NOI18N
+        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_iniciar-sesion (1).png"))); // NOI18N
         buttonLogIn.setBorderPainted(false);
         buttonLogIn.setContentAreaFilled(false);
         buttonLogIn.setFocusPainted(false);
@@ -126,7 +126,7 @@ public class LogIn extends javax.swing.JPanel {
 
         backButton.setBackground(new java.awt.Color(255, 255, 255));
         backButton.setForeground(new java.awt.Color(255, 255, 255));
-        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_regresar (2).png"))); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_regresar (2).png"))); // NOI18N
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(false);
         backButton.setFocusPainted(false);

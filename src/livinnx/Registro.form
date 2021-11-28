@@ -92,12 +92,12 @@
             <Component class="javax.swing.JLabel" name="labelIcon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/livinnx/logolivinnx.png"/>
+                  <Image iconType="3" name="/livinnx/resources/logolivinnx.png"/>
                 </Property>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="320" y="180" width="-1" height="312"/>
+                  <AbsoluteConstraints x="320" y="180" width="200" height="312"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -248,7 +248,7 @@
             <Component class="javax.swing.JButton" name="backButton">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/livinnx/button_regresar (2).png"/>
+                  <Image iconType="3" name="/livinnx/resources/button_regresar (2).png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -379,7 +379,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/livinnx/button_registrar.png"/>
+                  <Image iconType="3" name="/livinnx/resources/button_registrar.png"/>
                 </Property>
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>

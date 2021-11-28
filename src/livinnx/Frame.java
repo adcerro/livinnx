@@ -22,7 +22,7 @@ public class Frame extends javax.swing.JFrame {
     public Frame() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon("src/livinnx/logolivinnx.png").getImage());
+        this.setIconImage(new ImageIcon("src/livinnx/resources/logolivinnx.png").getImage());
         String directory = "LivinnxBD.accdb";
         conectar = db.connection(directory);
     }
@@ -53,7 +53,7 @@ public class Frame extends javax.swing.JFrame {
         PInicio.setBackground(new java.awt.Color(255, 255, 255));
         PInicio.setLayout(null);
 
-        labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
+        labelcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/logolivinnx.png"))); // NOI18N
         PInicio.add(labelcon);
         labelcon.setBounds(360, 110, 190, 312);
 
@@ -88,7 +88,7 @@ public class Frame extends javax.swing.JFrame {
 
         buttonRegister.setBackground(new java.awt.Color(255, 255, 255));
         buttonRegister.setForeground(new java.awt.Color(255, 255, 255));
-        buttonRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_registro.png"))); // NOI18N
+        buttonRegister.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_registro.png"))); // NOI18N
         buttonRegister.setBorder(null);
         buttonRegister.setBorderPainted(false);
         buttonRegister.setContentAreaFilled(false);
@@ -105,7 +105,7 @@ public class Frame extends javax.swing.JFrame {
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_iniciar-sesion-2.png"))); // NOI18N
+        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_iniciar-sesion-2.png"))); // NOI18N
         buttonLogIn.setBorder(null);
         buttonLogIn.setBorderPainted(false);
         buttonLogIn.setContentAreaFilled(false);
@@ -159,11 +159,12 @@ public class Frame extends javax.swing.JFrame {
                     Reservas res = new Reservas(usuario);
                     remove(log);
                     add(res, BorderLayout.CENTER);
+                    res.setgreetLabel();
                     setSize(760, 560);
                     res.getBackButton().addActionListener(new ActionListener(){
                         @Override
                         public void actionPerformed(ActionEvent ae) {
-                            setSize(560, 560);
+                            setSize(590, 550);
                             remove(res);
                             add(log, BorderLayout.CENTER);
                             revalidate();

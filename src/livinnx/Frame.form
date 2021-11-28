@@ -50,7 +50,7 @@
         <Component class="javax.swing.JLabel" name="labelcon">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/livinnx/logolivinnx.png"/>
+              <Image iconType="3" name="/livinnx/resources/logolivinnx.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -128,7 +128,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/livinnx/button_registro.png"/>
+              <Image iconType="3" name="/livinnx/resources/button_registro.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
@@ -161,7 +161,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/livinnx/button_iniciar-sesion-2.png"/>
+              <Image iconType="3" name="/livinnx/resources/button_iniciar-sesion-2.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>

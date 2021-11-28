@@ -93,9 +93,9 @@ public class Registro extends javax.swing.JPanel {
         innerPanel.add(labelSubTitle);
         labelSubTitle.setBounds(20, 70, 260, 71);
 
-        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/logolivinnx.png"))); // NOI18N
+        labelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/logolivinnx.png"))); // NOI18N
         innerPanel.add(labelIcon);
-        labelIcon.setBounds(320, 180, 213, 312);
+        labelIcon.setBounds(320, 180, 200, 312);
 
         labelName.setBackground(new java.awt.Color(255, 255, 255));
         labelName.setFont(new java.awt.Font("PT Serif Caption", 1, 24)); // NOI18N
@@ -185,7 +185,7 @@ public class Registro extends javax.swing.JPanel {
         innerPanel.add(textFieldApt);
         textFieldApt.setBounds(40, 430, 230, 30);
 
-        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_regresar (2).png"))); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_regresar (2).png"))); // NOI18N
         backButton.setBorderPainted(false);
         backButton.setContentAreaFilled(false);
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -264,7 +264,7 @@ public class Registro extends javax.swing.JPanel {
 
         buttonLogIn.setBackground(new java.awt.Color(255, 255, 255));
         buttonLogIn.setForeground(new java.awt.Color(255, 255, 255));
-        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/button_registrar.png"))); // NOI18N
+        buttonLogIn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/livinnx/resources/button_registrar.png"))); // NOI18N
         buttonLogIn.setBorderPainted(false);
         buttonLogIn.setContentAreaFilled(false);
         buttonLogIn.setFocusPainted(false);
