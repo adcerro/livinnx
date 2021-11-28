@@ -1,4 +1,3 @@
-
 package livinnx;
 
 import java.awt.BorderLayout;
@@ -12,10 +11,11 @@ import javax.swing.table.DefaultTableModel;
 
 /* @author natymartinez04*/
 public class Frame extends javax.swing.JFrame {
+
     BaseDeDatos db = new BaseDeDatos();
     Connection conectar;
     Usuario usuario;
-    
+
     /**
      * Creates new form Inicio
      */
@@ -23,12 +23,10 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon("src/livinnx/logolivinnx.png").getImage());
-        String directory = "LivinnxBD.accdb"; 
-        conectar= db.connection(directory);
-        
-        
+        String directory = "LivinnxBD.accdb";
+        conectar = db.connection(directory);
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -130,76 +128,73 @@ public class Frame extends javax.swing.JFrame {
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
         LogIn log = new LogIn();
         this.remove(PInicio);
-        this.add(log, BorderLayout.CENTER );
+        this.add(log, BorderLayout.CENTER);
         revalidate();
         repaint();
-        log.getBackButton().addActionListener(new ActionListener(){
+        log.getBackButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 remove(log);
-                add(PInicio,BorderLayout.CENTER );
+                add(PInicio, BorderLayout.CENTER);
                 revalidate();
                 repaint();
             }
-            
+
         });
-        log.getLogButton().addActionListener(new ActionListener(){
+        log.getLogButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                String query_buscarusuario="SELECT Usuario,Clave FROM Personas WHERE Usuario='"+log.getUser()+"' AND Clave='"+log.getUserPassword()+"'";
-                String titles_table[]={"Usuario","Clave"};        
-                DefaultTableModel T6= new DefaultTableModel(null,titles_table);
-                String Results[]= new String[2];
-                T6=db.SEARCH(conectar, query_buscarusuario, Results, T6);
-                int cont=T6.getRowCount();
-        
-                if(cont == 0){
-                    JOptionPane.showMessageDialog(null,"No hay una persona con ese Usuario o Clave registrado");
-                }
-                else
-                {   
-                String us=log.getUser();
-                usuario = new Usuario(us);
-                Reservas res = new Reservas(usuario);
-                remove(log);
-                add(res.getBaseP(), BorderLayout.CENTER);
-                setSize(760,560);
-                revalidate();
-                repaint();
-                res.getBackButton().addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent ae) {
-                    remove(res);
-                    add(PInicio, BorderLayout.CENTER);
-                    setSize(590,550);
+                String query_buscarusuario = "SELECT Usuario,Clave FROM Personas WHERE Usuario='" + log.getUser() + "' AND Clave='" + log.getUserPassword() + "'";
+                String titles_table[] = {"Usuario", "Clave"};
+                DefaultTableModel T6 = new DefaultTableModel(null, titles_table);
+                String Results[] = new String[2];
+                T6 = db.SEARCH(conectar, query_buscarusuario, Results, T6);
+                int cont = T6.getRowCount();
+
+                if (cont == 0) {
+                    JOptionPane.showMessageDialog(null, "No hay una persona con ese Usuario o Clave registrado");
+                } else {
+                    String us = log.getUser();
+                    usuario = new Usuario(us);
+                    Reservas res = new Reservas(usuario);
+                    remove(log);
+                    add(res, BorderLayout.CENTER);
+                    setSize(760, 560);
+                    res.getBackButton().addActionListener(new ActionListener(){
+                        @Override
+                        public void actionPerformed(ActionEvent ae) {
+                            setSize(560, 560);
+                            remove(res);
+                            add(log, BorderLayout.CENTER);
+                            revalidate();
+                            repaint();
+                        }
+                    });
                     revalidate();
                     repaint();
                 }
-
-            });
-        }
             }
-            
+
         });
     }//GEN-LAST:event_buttonLogInActionPerformed
 
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         Registro r = new Registro();
         this.remove(PInicio);
-        this.add(r,BorderLayout.CENTER );
+        this.add(r, BorderLayout.CENTER);
         revalidate();
         repaint();
-        r.getBackButton().addActionListener(new ActionListener(){
+        r.getBackButton().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent ae) {
                 remove(r);
-                add(PInicio,BorderLayout.CENTER );
+                add(PInicio, BorderLayout.CENTER);
                 revalidate();
                 repaint();
-            }           
+            }
         });
-        
-        
+
+
     }//GEN-LAST:event_buttonRegisterActionPerformed
 
     /**
@@ -237,7 +232,7 @@ public class Frame extends javax.swing.JFrame {
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PInicio;
     private javax.swing.JButton buttonLogIn;
