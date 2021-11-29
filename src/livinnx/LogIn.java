@@ -175,7 +175,7 @@ public class LogIn extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
     /**
-    *checks for the first click of the user to remove the hint text of the textField 
+    *Checks for the first click of the user to remove the hint text of the userTextField 
     */
     private void userTextFieldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userTextFieldMouseClicked
         if(userTextField.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
