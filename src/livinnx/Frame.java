@@ -124,7 +124,15 @@ public class Frame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * This method asigns and action to the Log in button once it's created
+     * When the button is clicked, the first panel gets removed from the frame
+     * Then the LogIn panel gets added to the frame
+     * A listener is added to buttons of the LogIn panel for the frame to be able to change panels again (go back/ log in)
+     * When the login button of the LogIn panel is pressed, it searches for a match in the data-base, if found, the frame displays the Reservas panel
+     * If no match was found in the datebase a JOptionPane shows an error message
+     * Finally, if a match was found, a listener is alsso added to the logOut button on Reservas, to be able to return to the LogIn panel
+     */
     private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
         LogIn log = new LogIn();
         this.remove(PInicio);
@@ -178,7 +186,12 @@ public class Frame extends javax.swing.JFrame {
 
         });
     }//GEN-LAST:event_buttonLogInActionPerformed
-
+    /**
+     * This method asigns and action to the Register button once it's created
+     * When the button is clicked, the first panel gets removed from the frame
+     * Then the Registro panel gets added to the frame
+     * A listener is added to the go back button of the Registro panel, to allow the frame to switch panels back
+     */
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         Registro r = new Registro();
         this.remove(PInicio);
