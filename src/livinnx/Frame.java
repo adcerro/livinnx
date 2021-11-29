@@ -45,7 +45,7 @@ public class Frame extends javax.swing.JFrame {
         buttonLogIn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Livinnx");
+        setTitle("Livinnx Reservas");
         setMaximizedBounds(new java.awt.Rectangle(0, 0, 1080, 720));
         setMinimumSize(new java.awt.Dimension(590, 550));
         setResizable(false);
