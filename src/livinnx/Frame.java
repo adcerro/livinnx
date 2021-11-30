@@ -1,6 +1,7 @@
 package livinnx;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -176,6 +177,9 @@ public class Frame extends javax.swing.JFrame {
                             setSize(590, 550);
                             remove(res);
                             add(log, BorderLayout.CENTER);
+                            log.getUserField().setText("Ingrese nombre de usuario");
+                            log.getUserField().setForeground(Color.GRAY);
+                            log.getPasswordField().setText("");
                             revalidate();
                             repaint();
                         }

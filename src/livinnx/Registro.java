@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package livinnx;
 
 import java.awt.Color;
@@ -107,13 +102,8 @@ public class Registro extends javax.swing.JPanel {
         textFieldName.setForeground(new java.awt.Color(204, 204, 204));
         textFieldName.setText("Ingrese su nombre");
         textFieldName.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                textFieldNameMousePressed(evt);
-            }
-        });
-        textFieldName.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldNameActionPerformed(evt);
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                textFieldNameMouseClicked(evt);
             }
         });
         innerPanel.add(textFieldName);
@@ -133,11 +123,6 @@ public class Registro extends javax.swing.JPanel {
                 textFieldLNMousePressed(evt);
             }
         });
-        textFieldLN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldLNActionPerformed(evt);
-            }
-        });
         innerPanel.add(textFieldLN);
         textFieldLN.setBounds(40, 270, 230, 30);
 
@@ -155,11 +140,6 @@ public class Registro extends javax.swing.JPanel {
                 textFieldBlockMouseClicked(evt);
             }
         });
-        textFieldBlock.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldBlockActionPerformed(evt);
-            }
-        });
         innerPanel.add(textFieldBlock);
         textFieldBlock.setBounds(40, 350, 230, 30);
 
@@ -175,11 +155,6 @@ public class Registro extends javax.swing.JPanel {
         textFieldApt.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 textFieldAptMouseClicked(evt);
-            }
-        });
-        textFieldApt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldAptActionPerformed(evt);
             }
         });
         innerPanel.add(textFieldApt);
@@ -210,11 +185,6 @@ public class Registro extends javax.swing.JPanel {
                 textFieldUserMouseClicked(evt);
             }
         });
-        textFieldUser.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldUserActionPerformed(evt);
-            }
-        });
         innerPanel.add(textFieldUser);
         textFieldUser.setBounds(40, 504, 230, 30);
 
@@ -232,11 +202,6 @@ public class Registro extends javax.swing.JPanel {
                 textFieldPasswMouseClicked(evt);
             }
         });
-        textFieldPassw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldPasswActionPerformed(evt);
-            }
-        });
         innerPanel.add(textFieldPassw);
         textFieldPassw.setBounds(40, 580, 230, 30);
 
@@ -248,15 +213,10 @@ public class Registro extends javax.swing.JPanel {
         labelID.setBounds(40, 622, 160, 32);
 
         textFieldID.setForeground(new java.awt.Color(204, 204, 204));
-        textFieldID.setText("Ingrese numero de identificación");
+        textFieldID.setText("Ingrese número de identificación");
         textFieldID.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 textFieldIDMouseClicked(evt);
-            }
-        });
-        textFieldID.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textFieldIDActionPerformed(evt);
             }
         });
         innerPanel.add(textFieldID);
@@ -283,36 +243,14 @@ public class Registro extends javax.swing.JPanel {
         add(scrollPane, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldLNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldLNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldLNActionPerformed
-
-    private void textFieldBlockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldBlockActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldBlockActionPerformed
-
-    private void textFieldAptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldAptActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldAptActionPerformed
-
-    private void textFieldUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldUserActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldUserActionPerformed
-
-    private void textFieldPasswActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldPasswActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldPasswActionPerformed
-
-    private void textFieldIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldIDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldIDActionPerformed
-
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_backButtonActionPerformed
     /**
      *This method checks each input of the textfields on the panel when the buttonRegister is pressed
-     * If all inputs are valid the new user is added at the 
+     * If all inputs are valid and the user is not already registered, a new user gets added to the data base
+     * If the user already exists a JoptionPane shows an error message
+     * @author David
      */
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
         String nombrep= textFieldName.getText();
@@ -324,43 +262,43 @@ public class Registro extends javax.swing.JPanel {
         String id = textFieldID.getText();
         int c=0;
         if(textFieldName.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese un nombre valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un nombre válido");
         }else{
             c=c+1;
         }
         
         if(textFieldLN.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apeliido valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apellido válido");
         }else{
             c=c+1;
         }
         
         if(textFieldBlock.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese un bloque valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un bloque válido");
         }else{
             c=c+1;
         }
         
         if(textFieldApt.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apartamento valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un apartamento válido");
         }else{
             c=c+1;
         }
         
         if(textFieldUser.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese un usuario válido");
         }else{
             c=c+1;
         }
         
         if(textFieldPassw.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese una contraseña valida");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese una contraseña válida");
         }else{
             c=c+1;
         }
         
         if(textFieldID.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null,"Porfavor ingrese una identificacion valido");
+            JOptionPane.showMessageDialog(null,"Porfavor ingrese una identificación válida");
         }else{
             c=c+1;
         }
@@ -395,73 +333,70 @@ public class Registro extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_buttonRegisterActionPerformed
+                                           
     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldName 
-    */
-    private void textFieldNameMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNameMousePressed
-       if(textFieldName.getText().equalsIgnoreCase("Ingrese su nombre")){
-            textFieldName.setText("");
-            textFieldName.setForeground(Color.BLACK);
-        }
-    }//GEN-LAST:event_textFieldNameMousePressed
-    /**
-    *Checks for the first click of the user to remove the hint text of the textFieldLN
-    */
+     *Checks for the first click of the user to remove the hint text of the textFieldLN
+     */
     private void textFieldLNMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldLNMousePressed
        if(textFieldLN.getText().equalsIgnoreCase("Ingrese su apellido")){
             textFieldLN.setText("");
             textFieldLN.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldLNMousePressed
-     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldBlock
-    */
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldBlock
+     */
     private void textFieldBlockMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldBlockMouseClicked
         if(textFieldBlock.getText().equalsIgnoreCase("Ingrese el número del bloque")){
             textFieldBlock.setText("");
             textFieldBlock.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldBlockMouseClicked
-     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldApt
-    */
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldApt
+     */
     private void textFieldAptMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldAptMouseClicked
        if(textFieldApt.getText().equalsIgnoreCase("Ingrese el número del apartamento")){
             textFieldApt.setText("");
             textFieldApt.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldAptMouseClicked
-     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldUser
-    */
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldUser
+     */
     private void textFieldUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldUserMouseClicked
         if(textFieldUser.getText().equalsIgnoreCase("Ingrese nombre de usuario")){
             textFieldUser.setText("");
             textFieldUser.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldUserMouseClicked
-     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldPassw
-    */
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldPassw
+     */
     private void textFieldPasswMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldPasswMouseClicked
         if(textFieldPassw.getText().equalsIgnoreCase("Ingrese contraseña")){
             textFieldPassw.setText("");
             textFieldPassw.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldPasswMouseClicked
-     /**
-    *Checks for the first click of the user to remove the hint text of the textFieldID
-    */
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldID
+     */
     private void textFieldIDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldIDMouseClicked
-       if(textFieldID.getText().equalsIgnoreCase("Ingrese numero de identificación")){
+       if(textFieldID.getText().equalsIgnoreCase("Ingrese número de identificación")){
             textFieldID.setText("");
             textFieldID.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_textFieldIDMouseClicked
-
-    private void textFieldNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldNameActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldNameActionPerformed
+    /**
+     *Checks for the first click of the user to remove the hint text of the textFieldName
+     */
+    private void textFieldNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_textFieldNameMouseClicked
+        if(textFieldName.getText().equalsIgnoreCase("Ingrese su nombre")){
+            textFieldName.setText("");
+            textFieldName.setForeground(Color.BLACK);
+        }
+    }//GEN-LAST:event_textFieldNameMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -158,7 +158,7 @@ public int getId(){
 
         jLabel5.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 183, 189));
-        jLabel5.setText("  Escoga el día que desea reservar el gimnasio");
+        jLabel5.setText("  Escoja el día que desea reservar el gimnasio");
         jLabel5.setOpaque(true);
         gymPanel.add(jLabel5);
         jLabel5.setBounds(30, 60, 370, 40);
@@ -232,7 +232,7 @@ public int getId(){
 
         jLabel9.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 183, 189));
-        jLabel9.setText("  Escoga el día que desea reservar la zona de juegos");
+        jLabel9.setText("  Escoja el día que desea reservar la zona de juegos");
         jLabel9.setOpaque(true);
         gamePanel.add(jLabel9);
         jLabel9.setBounds(20, 60, 390, 40);
@@ -308,7 +308,7 @@ public int getId(){
 
         jLabel13.setFont(new java.awt.Font("PingFang TC", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(0, 183, 189));
-        jLabel13.setText("  Escoga el día que desea reservar la zona de estudio");
+        jLabel13.setText("  Escoja el día que desea reservar la zona de estudio");
         jLabel13.setOpaque(true);
         studyPanel.add(jLabel13);
         jLabel13.setBounds(20, 60, 390, 40);
@@ -346,7 +346,7 @@ public int getId(){
 
         jLabel2.setFont(new java.awt.Font("PingFang TC", 1, 16)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 183, 189));
-        jLabel2.setText("   Escoga el día que desea reservar la piscina");
+        jLabel2.setText("   Escoja el día que desea reservar la piscina");
         jLabel2.setOpaque(true);
         poolPanel.add(jLabel2);
         jLabel2.setBounds(20, 60, 370, 40);
@@ -503,7 +503,7 @@ public int getId(){
         labelSubName3.setBackground(new java.awt.Color(255, 255, 255));
         labelSubName3.setFont(new java.awt.Font("PT Serif Caption", 1, 30)); // NOI18N
         labelSubName3.setForeground(new java.awt.Color(255, 255, 255));
-        labelSubName3.setText("O llamenos al número (+57) 3135434528");
+        labelSubName3.setText("O llámenos al número (+57) 3135434528");
         jPanel5.add(labelSubName3);
         labelSubName3.setBounds(10, 20, 780, 71);
 
@@ -747,7 +747,7 @@ public int getId(){
                                 JOptionPane.showMessageDialog(null, "Quedan tres reservas disponibles para este horario");
                             } else {
                                 if (cont == 0) {
-                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentre disponible para este horario");
+                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentra disponible para este horario");
                                 }
                             }
                         }
@@ -960,7 +960,7 @@ public int getId(){
                                                 JOptionPane.showMessageDialog(null, "Quedan siete reservas disponibles para este horario");
                                             } else {
                                                 if (cont == 0) {
-                                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentre disponible para este horario");
+                                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentra disponible para este horario");
                                                 }
                                             }
                                         }
@@ -1197,7 +1197,7 @@ public int getId(){
                                                                             JOptionPane.showMessageDialog(null, "Quedan catorce reservas disponibles para este horario");
                                                                         } else {
                                                                             if (cont == 0) {
-                                                                                JOptionPane.showMessageDialog(null, "Todo el aforo se encuentre disponible para este horario");
+                                                                                JOptionPane.showMessageDialog(null, "Todo el aforo se encuentra disponible para este horario");
                                                                             }
                                                                         }
                                                                     }
@@ -1407,7 +1407,7 @@ public int getId(){
                                 JOptionPane.showMessageDialog(null, "Quedan tres reservas disponibles para este horario");
                             } else {
                                 if (cont == 0) {
-                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentre disponible para este horario");
+                                    JOptionPane.showMessageDialog(null, "Todo el aforo se encuentra disponible para este horario");
                                 }
                             }
                         }

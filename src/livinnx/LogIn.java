@@ -1,18 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package livinnx;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 /**
  *
@@ -100,11 +92,6 @@ public class LogIn extends javax.swing.JPanel {
                 userTextFieldMouseClicked(evt);
             }
         });
-        userTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userTextFieldActionPerformed(evt);
-            }
-        });
         PInicio.add(userTextField);
         userTextField.setBounds(20, 210, 230, 30);
 
@@ -116,11 +103,6 @@ public class LogIn extends javax.swing.JPanel {
         buttonLogIn.setFocusPainted(false);
         buttonLogIn.setMaximumSize(new java.awt.Dimension(270, 62));
         buttonLogIn.setMinimumSize(new java.awt.Dimension(270, 62));
-        buttonLogIn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonLogInActionPerformed(evt);
-            }
-        });
         PInicio.add(buttonLogIn);
         buttonLogIn.setBounds(20, 380, 150, 50);
 
@@ -132,20 +114,10 @@ public class LogIn extends javax.swing.JPanel {
         backButton.setFocusPainted(false);
         backButton.setMaximumSize(new java.awt.Dimension(270, 62));
         backButton.setMinimumSize(new java.awt.Dimension(270, 62));
-        backButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backButtonActionPerformed(evt);
-            }
-        });
         PInicio.add(backButton);
         backButton.setBounds(200, 380, 110, 50);
 
         passwordField.setToolTipText("Ingrese su contraseña aqui ");
-        passwordField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordFieldActionPerformed(evt);
-            }
-        });
         PInicio.add(passwordField);
         passwordField.setBounds(20, 320, 230, 30);
 
@@ -162,18 +134,6 @@ public class LogIn extends javax.swing.JPanel {
             .addComponent(PInicio, javax.swing.GroupLayout.DEFAULT_SIZE, 512, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void userTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userTextFieldActionPerformed
-
-    private void buttonLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonLogInActionPerformed
-
-    }//GEN-LAST:event_buttonLogInActionPerformed
-
-    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_backButtonActionPerformed
     /**
     *Checks for the first click of the user to remove the hint text of the userTextField 
     */
@@ -183,10 +143,6 @@ public class LogIn extends javax.swing.JPanel {
             userTextField.setForeground(Color.BLACK);
         }
     }//GEN-LAST:event_userTextFieldMouseClicked
-
-    private void passwordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_passwordFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -213,5 +169,11 @@ public class LogIn extends javax.swing.JPanel {
     }
     public String getUserPassword(){
         return new String( passwordField.getPassword());
+    }
+    public JTextField getUserField(){
+        return userTextField;
+    }
+    public JPasswordField getPasswordField(){
+        return passwordField;
     }
 }
