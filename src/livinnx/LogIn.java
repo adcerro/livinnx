@@ -7,8 +7,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
- *
  * @author aland
+ * @author Natalia
  */
 public class LogIn extends javax.swing.JPanel {
 

@@ -7,6 +7,10 @@ import java.sql.Statement;
 import javax.swing.table.DefaultTableModel;
 
 public class BaseDeDatos {
+    /**
+     * This method gives access to the database file
+     *@param databaseLocation the filepath of the database file
+     */
     public Connection connection( String databaseLocation)
     {
        try
@@ -23,7 +27,14 @@ public class BaseDeDatos {
 
 
     }
-
+    /**
+     *This method looks for a matching entry in the database and returns the desired information from that entry
+     *@param x Connection established with the database
+     *@param query String with the information from the desired entry in the database
+     *@param results Array of found/expected to be found results
+     *@param m DefautlTableModel with the format expected for the results
+     *@return m DefautlTableModel with the desired information
+     */
     public DefaultTableModel SEARCH(Connection x,String query,String results[],DefaultTableModel m)
     {    ResultSet s=null;
          Statement st;
@@ -50,7 +61,11 @@ public class BaseDeDatos {
         }
          return m;
     }
-
+    /**
+     * This method allows to add/edit/delete and entry with the given information
+     * @param x  Connection established with the database
+     * @param query String with the desired operation and information of the desired entry 
+     */
     public void add_edit_delete(Connection x, String query)
     {   Statement st;
 

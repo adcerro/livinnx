@@ -21,12 +21,19 @@ public class Reservas extends javax.swing.JPanel {
     BaseDeDatos db = new BaseDeDatos();
     Connection conectar;
     Usuario usuario1;
+    /**
+     * Creates new Reservas.
+     */
     public Reservas(Usuario usuario) {
         initComponents(); 
         this.usuario1 = usuario;
         String directory = "LivinnxBD.accdb"; 
         conectar= db.connection(directory);
     }
+    /**
+     * This method looks for the user ID in the database.
+     * @return User's id.
+     */
 public int getId(){
         String usua = usuario1.usuario;
         String query_encontrarid = "SELECT ID FROM Personas WHERE Usuario='" + usua + "'";
@@ -168,11 +175,6 @@ public int getId(){
         jCalendar1.setBounds(30, 100, 370, 270);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "7 am", "8 am", "9 am", "10 am", "11 am", "12 pm", "1 pm", "2 pm", "3 pm", "4 pm", "5 pm", "6 pm", "7 pm", "8 pm", " " }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
         gymPanel.add(jComboBox1);
         jComboBox1.setBounds(500, 180, 140, 20);
 
@@ -554,7 +556,13 @@ public int getId(){
 
         add(lowerPanel, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /**
+     * This method checks if the reservation for the gym at the desired date and time is possible.
+     * If it's possible then it stores the information of the reservation in the database
+     * if it's not it shows an error message with the reason (invalid date/ already reserved/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void buttonReserveGymActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveGymActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -655,11 +663,13 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonReserveGymActionPerformed
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
+    
+    /**
+     *This method checks if the reservation for the gym at the desired date is possible.
+     * If it's possible then it shows the ammount of reservations that can be made for the place
+     * if it's not it shows a message with the reason (invalid date/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -759,7 +769,12 @@ public int getId(){
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
-
+    /**
+     *This method checks if the reservation for the game zone at the desired date and time is possible.
+     * If it's possible then it stores the information of the reservation in the database
+     * if it's not it shows an error message with the reason (invalid date/ already reserved/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void buttonReserveGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveGameActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -860,7 +875,12 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonReserveGameActionPerformed
-
+    /**
+     *This method checks if the reservation for the game zone at the desired date is possible.
+     * If it's possible then it shows the ammount of reservations that can be made for the place
+     * if it's not it shows a message with the reason (invalid date/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -975,7 +995,12 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
-
+    /**
+     *This method checks if the reservation for the study zone at the desired date and time is possible.
+     * If it's possible then it stores the information of the reservation in the database
+     * if it's not it shows an error message with the reason (invalid date/ already reserved/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void buttonReserveStudyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReserveStudyActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -1076,7 +1101,12 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonReserveStudyActionPerformed
-
+    /**
+     *This method checks if the reservation for the study zone at the desired date is possible.
+     * If it's possible then it shows the ammount of reservations that can be made for the place
+     * if it's not it shows a message with the reason (invalid date/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -1219,7 +1249,12 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-
+    /**
+     *This method checks if the reservation for the pool at the desired date and time is possible.
+     * If it's possible then it stores the information of the reservation in the database
+     * if it's not it shows an error message with the reason (invalid date/ already reserved/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void buttonReservePoolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReservePoolActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -1319,7 +1354,12 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_buttonReservePoolActionPerformed
-
+    /**
+     *This method checks if the reservation for the pool at the desired date is possible.
+     * If it's possible then it shows the ammount of reservations that can be made for the place
+     * if it's not it shows a message with the reason (invalid date/ no more reservations allowed).
+     * @exception ParseException if the format of any string given (date/ time) is not the expected.
+     */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         String dia, hour = "";
@@ -1418,7 +1458,9 @@ public int getId(){
             Logger.getLogger(Reservas.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton5ActionPerformed
-
+    /**
+     *This method looks for every reservation made by the user and stores it on a Table to be displayed.
+     */
     private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
         // TODO add your handling code here:
         String usuario = usuario1.usuario;

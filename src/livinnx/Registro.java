@@ -249,7 +249,7 @@ public class Registro extends javax.swing.JPanel {
     /**
      *This method checks each input of the textfields on the panel when the buttonRegister is pressed
      * If all inputs are valid and the user is not already registered, a new user gets added to the data base
-     * If the user already exists a JoptionPane shows an error message
+     * If the user already exists or an input is not valid a JoptionPane shows an error message
      * @author David
      */
     private void buttonRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRegisterActionPerformed
